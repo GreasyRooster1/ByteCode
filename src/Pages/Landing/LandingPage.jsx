@@ -6,6 +6,7 @@ import {Button} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
+import LandingSection from "~/Pages/Landing/LandingSection.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -33,6 +34,9 @@ function LandingPage() {
                     Home
                 </Button>
             </Nav>
+            <LandingSection>
+
+            </LandingSection>
         </AuthProvider>
     )
 }
