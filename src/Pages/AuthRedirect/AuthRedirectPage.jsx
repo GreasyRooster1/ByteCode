@@ -7,7 +7,7 @@ function AuthRedirectPage() {
         <>
         <ScreenPage>
             Logging in...
-            <Navigate to="/" replace />;
+            <Navigate to="/" replace />
         </ScreenPage>
         </>
     );
