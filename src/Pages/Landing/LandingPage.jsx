@@ -34,6 +34,10 @@ function LandingPage() {
                     Home
                 </Button>
             </Nav>
+            <LandingSection primary>
+                section 1
+            </LandingSection>
+
             <LandingSection>
                 section 1
             </LandingSection>

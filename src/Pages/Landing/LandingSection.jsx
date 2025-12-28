@@ -1,14 +1,14 @@
 import React from 'react';
 import {Box, Section} from "@radix-ui/themes";
-import styles from "./landingSection.module.scss";
+import styles from "./landingSection.module.css";
 
 function LandingSection(props) {
-    let isPrimaryStyle = props.isPrimary?styles.primary:styles.secondary;
+    let primaryStyle = props.primary?styles.primary:styles.secondary;
     return (
         <Box
-            width="100vh"
+            width="100vw"
             height="50vh"
-            className={`${isPrimaryStyle} ${props.className}`}
+            className={`${primaryStyle} ${props.className}`}
             {...props}
         >
             {props.children}
