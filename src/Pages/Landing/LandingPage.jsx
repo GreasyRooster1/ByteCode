@@ -41,6 +41,10 @@ function LandingPage() {
             <LandingSection>
                 section 2
             </LandingSection>
+
+            <LandingSection>
+                section 3
+            </LandingSection>
         </AuthProvider>
     )
 }
