@@ -9,7 +9,7 @@ function AuthRedirectPage() {
     const auth = useAuth();
 
     if (auth.isLoading) {
-        return <LoadingScreen />;
+        return <LoadingScreen message={"Logging you in..."}/>;
     }
 
     if (auth.error) {
