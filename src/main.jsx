@@ -11,7 +11,7 @@ import {AuthProvider} from "react-oidc-context";
 const cognitoAuthConfig = {
     authority: "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_nQhVA9vHC",
     client_id: "3jssdi6ka6iq8s2aeil20f9jg5",
-    redirect_uri: import.meta.env.DEV?"http://localhost:5173/":(window.location.host??"https://bytecodeonline.com"),
+    redirect_uri: import.meta.env.DEV?"http://localhost:5173/__authRedirect":(window.location.host??"https://bytecodeonline.com/__authRedirect"),
     response_type: "code",
     scope: "phone openid email",
 };
