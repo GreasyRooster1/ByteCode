@@ -35,7 +35,7 @@ function LandingPage() {
                 </Button>
             </Nav>
             <LandingSection>
-
+                section 1
             </LandingSection>
         </AuthProvider>
     )
