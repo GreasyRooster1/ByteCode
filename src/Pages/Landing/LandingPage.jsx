@@ -15,7 +15,6 @@ function LandingPage() {
     return (
         <AuthProvider>
             <Nav className={styles.nav}>
-
                 <UiSwitch value={auth.isAuthenticated}>
                     <UiSwitch.True>
                         <Button onClick={() => {

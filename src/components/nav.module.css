@@ -6,3 +6,8 @@
     display: flex;
 
 }
+
+.navInner{
+    width:100%;
+    display: flex;
+}
