@@ -6,10 +6,10 @@ function LandingSection(props) {
     let primaryStyle = props.primary?styles.primary:styles.secondary;
     return (
         <Box
+            {...props}
             width="100vw"
             height="50vh"
             className={`${primaryStyle} ${props.className}`}
-            {...props}
         >
             {props.children}
         </Box>
