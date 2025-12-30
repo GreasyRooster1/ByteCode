@@ -8,6 +8,7 @@ import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
 import LandingSection from "~/Pages/Landing/LandingSection.jsx";
 import TextScroll from "~/Pages/Landing/components/TextScroll.jsx";
+import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -40,6 +41,7 @@ function LandingPage() {
             </Nav>
 
             <LandingSection height="80vh" justify="center" align="center" primary>
+                <MatrixBG />
                 <Flex width="80%" height="80%" direction="column">
                     <Text size="9" weight="bold">Bytecode,</Text>
                     <Text size="7" weight="bold">Learn coding one byte at a time</Text>

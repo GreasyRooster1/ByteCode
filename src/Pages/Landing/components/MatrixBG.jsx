@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 
 const charsets = [
     "ByteCode",
@@ -8,18 +8,41 @@ const charsets = [
 ]
 
 function MatrixBg(props) {
-    useEffect(() => {
+    const canvasRef = useRef(null);
+    let animationFrameId = null
 
-    })
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+
+
+        let w = canvas.width;
+        let h = canvas.height;
+
+        let cols = Math.floor(w / 20) + 1;
+        let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*20)
+        let charset = charsets[Math.floor(Math.random()*charsets.length)];
+        let offsets = Array(cols).fill(0).map(() => Math.round(Math.random() * charset.length));
+        const render = ()=>{
+            matrix(ctx,ypos,cols,charset,offsets,w,h)
+            animationFrameId = requestAnimationFrame(render)
+        }
+
+        animationFrameId = requestAnimationFrame(render);
+
+        return () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        }
+    },[])
 
     return (
-        <canvas>
-
-        </canvas>
+        <canvas ref={canvasRef} />
     );
 }
 
-function matrix (ctx,) {
+function matrix (ctx,ypos,cols,charset,offsets,w,h) {
     // Draw a semitransparent black rectangle on top of previous drawing
     ctx.fillStyle = '#0001';
     ctx.fillRect(0, 0, w, h);
@@ -42,11 +65,6 @@ function matrix (ctx,) {
 
         if (y > 100 + Math.random() * 10000){
             ypos[ind] = 0;
-            if(Math.random()>0.90){
-                glitches[ind] = true
-            }else{
-                glitches[ind] = false;
-            }
         }else ypos[ind]+=20;
     });
 }
