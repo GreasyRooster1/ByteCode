@@ -13,7 +13,7 @@ function LandingSection(props) {
         <Flex
             {...props}
             width="100%"
-            height={props.height??"50vh"}
+            height={props.height??"70vh"}
             className={`${bgStyle} ${props.className}`}
         >
             {props.children}
