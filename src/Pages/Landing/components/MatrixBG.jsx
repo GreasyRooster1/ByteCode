@@ -2,10 +2,10 @@ import React, {useEffect, useRef} from 'react';
 import styles from './matrixBG.module.css';
 
 const charsets = [
-    "ByteCode",
-    "Just one byte at a time",
-    "ASM",
-    "NOP",
+    ".  .:.::ByteCode",
+    ". .:.::Just one byte at a time",
+    ". .:.::ASM",
+    ". .:.::NOP",
 ]
 
 function MatrixBg(props) {
@@ -15,6 +15,9 @@ function MatrixBg(props) {
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
+
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
 
         let w = canvas.width;
         let h = canvas.height;
