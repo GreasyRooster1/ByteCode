@@ -43,7 +43,7 @@ function LandingPage() {
             </LandingSection>
 
             <LandingSection height="10vh">
-                <TextScroll text={"More Info"} />
+                <Text>More Info</Text>
             </LandingSection>
 
             <LandingSection>
