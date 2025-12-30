@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import styles from './matrixBG.module.css';
 
 const charsets = [
     "ByteCode",
@@ -38,7 +39,7 @@ function MatrixBg(props) {
     },[])
 
     return (
-        <canvas ref={canvasRef} />
+        <canvas className={styles.canvas} ref={canvasRef}/>
     );
 }
 
