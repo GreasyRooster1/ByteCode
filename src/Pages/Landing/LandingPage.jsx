@@ -21,6 +21,7 @@ function LandingPage() {
                             localStorage.clear();
                             sessionStorage.clear();
                             window.location.reload();
+                            auth.signoutRedirect();
                         }}>
                             Log Out
                         </Button>
