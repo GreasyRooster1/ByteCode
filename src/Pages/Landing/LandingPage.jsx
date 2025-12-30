@@ -37,7 +37,7 @@ function LandingPage() {
                     Home
                 </Button>
             </Nav>
-            <LandingSection primary>
+            <LandingSection height="80vh" primary>
                 section 1
             </LandingSection>
 

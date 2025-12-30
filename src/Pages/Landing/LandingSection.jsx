@@ -8,7 +8,7 @@ function LandingSection(props) {
         <Box
             {...props}
             width="100%"
-            height="50vh"
+            height={props.height??"50vh"}
             className={`${primaryStyle} ${props.className}`}
         >
             {props.children}
