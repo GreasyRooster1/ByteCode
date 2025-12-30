@@ -7,6 +7,7 @@ import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
 import LandingSection from "~/Pages/Landing/LandingSection.jsx";
+import TextScroll from "~/Pages/Landing/components/TextScroll.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -42,7 +43,7 @@ function LandingPage() {
             </LandingSection>
 
             <LandingSection height="10vh">
-                section 2
+                <TextScroll text={"More Info"} />
             </LandingSection>
 
             <LandingSection>
