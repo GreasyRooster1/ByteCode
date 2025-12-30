@@ -9,18 +9,30 @@ function MatrixBg(props) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
+        const radix = document.querySelector(".radix-themes");
+        const font = window.getComputedStyle(radix, null).getPropertyValue("--default-font-family");
+        const bg = window.getComputedStyle(radix, null).getPropertyValue("--neutral-dark");
+        const primary = window.getComputedStyle(radix, null).getPropertyValue("--primary");
+
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
 
         let w = canvas.width;
         let h = canvas.height;
 
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.fillStyle = '#00ff00';
+        console.log(bg);
+        ctx.font = "15pt "+font;
+
         let cols = Math.floor(w / 20) + 1;
         let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*20)
         let charset = "ByteCode";//charsets[Math.floor(Math.random()*charsets.length)];
         let offsets = Array(cols).fill(0).map(() => Math.round(Math.random() * charset.length));
         const render = ()=>{
-            matrix(ctx,ypos,cols,charset,offsets,w,h)
+            matrix(ctx,ypos,cols,charset,offsets,w,h,bg,primary)
         }
 
         intervalId = setInterval(render,70);
@@ -37,15 +49,11 @@ function MatrixBg(props) {
     );
 }
 
-function matrix (ctx,ypos,cols,charset,offsets,w,h) {
-    const radix = document.querySelector(".radix-themes");
-    const computedFont = window.getComputedStyle(radix, null).getPropertyValue("--default-font-family");
-    ctx.fillStyle = '#0001';
+function matrix (ctx,ypos,cols,charset,offsets,w,h,bg,primary) {
+    ctx.fillStyle = bg+'55';
     ctx.fillRect(0, 0, w, h);
 
-    ctx.fillStyle = '#00ff00';
-    console.log(computedFont);
-    ctx.font = "15pt "+computedFont;
+    ctx.fillStyle = primary;
 
     ypos.forEach((y, ind) => {
         let text;
