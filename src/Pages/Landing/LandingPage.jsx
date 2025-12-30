@@ -41,7 +41,7 @@ function LandingPage() {
                 section 1
             </LandingSection>
 
-            <LandingSection>
+            <LandingSection height="10vh">
                 section 2
             </LandingSection>
 
