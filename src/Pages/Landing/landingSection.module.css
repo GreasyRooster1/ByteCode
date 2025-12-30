@@ -1,0 +1,7 @@
+.primary{
+    background-color: var(--primary);
+}
+
+.secondary{
+    background-color: var(--neutral-med);
+}

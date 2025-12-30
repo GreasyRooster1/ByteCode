@@ -1,0 +1,11 @@
+.nav{
+    margin: 8px 8px 8px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero{
+    background: var(--primary);
+}

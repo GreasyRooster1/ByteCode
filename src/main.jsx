@@ -1,17 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
 import "@radix-ui/themes/styles.css";
 import "./radixTheme.css"
+import './index.css'
 import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
-import { Theme } from "@radix-ui/themes";
-import { AuthProvider } from "react-oidc-context";
+import {Theme} from "@radix-ui/themes";
+import {AuthProvider} from "react-oidc-context";
 
 const cognitoAuthConfig = {
     authority: "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_nQhVA9vHC",
     client_id: "3jssdi6ka6iq8s2aeil20f9jg5",
-    redirect_uri: "http://localhost:5173/",
+    redirect_uri: import.meta.env.DEV?"http://localhost:5173/__authRedirect":(window.location.host??"https://bytecodeonline.com/__authRedirect"),
     response_type: "code",
     scope: "phone openid email",
 };

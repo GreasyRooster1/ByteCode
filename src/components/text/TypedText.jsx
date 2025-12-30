@@ -27,6 +27,10 @@ function TypedText(props) {
         setCurrentText("");
     },[props.text])
 
+    if(props.raw){
+        return (<>{currentText}</>);
+    }
+
     if(props.fade){
         return (<span className={`${props.className}`}>{
             currentText.split("").map((letter,index) =>

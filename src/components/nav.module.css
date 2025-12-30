@@ -1,0 +1,20 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    display: flex;
+    background: var(--neutral-dark);
+    height:48px;
+
+    transition: top 0.7s;
+}
+
+.navInner{
+    width:100%;
+    display: flex;
+}
+
+.hidden{
+    top:-48px;
+}

@@ -4,6 +4,7 @@ import HomePage from "./Pages/Home/HomePage.jsx";
 import EditorPage from "./Pages/Editor/EditorPage.jsx";
 import LandingPage from "./Pages/Landing/LandingPage.jsx";
 import LoadingTestPage from "./Pages/Loading/LoadingTestPage.jsx";
+import AuthRedirectPage from "~/Pages/AuthRedirect/AuthRedirectPage.jsx";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/loadingTest" element={<LoadingTestPage />} />
+        <Route path="/__authRedirect" element={<AuthRedirectPage />} />
       </Routes>
   )
 }
