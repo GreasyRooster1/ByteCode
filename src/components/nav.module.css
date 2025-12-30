@@ -5,6 +5,9 @@
     width: 100%;
     display: flex;
     background: var(--neutral-dark);
+    height:48px;
+
+    transition: top 0.7s;
 }
 
 .navInner{
@@ -13,5 +16,5 @@
 }
 
 .hidden{
-    top:-100%;
+    top:-48px;
 }
