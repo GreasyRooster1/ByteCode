@@ -45,7 +45,7 @@ function LandingPage() {
             <LandingSection height="80vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column" align="center" justify="center">
-                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>▁</span></Blinker></Text>
+                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
                     <br />
                     <Text size="7" weight="bold">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
                     <br /><br />

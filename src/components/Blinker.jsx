@@ -15,9 +15,9 @@ function Blinker(props) {
     }, []);
 
     return (
-        <>
-            {isVisible ? props.children : props.alt}
-        </>
+        <span style={{opacity:isVisible?'1':'0'}}>
+            {props.children}
+        </span>
     );
 }
 
