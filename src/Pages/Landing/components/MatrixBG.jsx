@@ -22,7 +22,7 @@ function MatrixBg(props) {
 
         ctx.fillStyle = bg;
         ctx.fillRect(0, 0, w, h);
-        ctx.font = "15pt "+font;
+        ctx.font = "20pt "+font;
 
         let cols = Math.floor(w / 20) + 1;
         let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*20)
@@ -56,7 +56,7 @@ function matrix (ctx,ypos,cols,charset,offsets,w,h,bg,primary) {
         let text;
         let alt_text;
         text = charset[(offsets[ind] + y / 20) % charset.length];
-        const x = ind * 20;
+        const x = ind * 35;
 
         ctx.fillText(text, x, y);
         if(alt_text!=null){
