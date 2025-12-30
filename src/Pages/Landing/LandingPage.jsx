@@ -53,7 +53,7 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection height="10vh" justify="center" align="center" direction="column">
+            <LandingSection height="20vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
                 <Text size="7" weight="bold">More Info</Text>
                 <Text size="5" weight="bold">V</Text>
             </LandingSection>
