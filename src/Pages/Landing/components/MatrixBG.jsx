@@ -16,7 +16,6 @@ function MatrixBg(props) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
-
         let w = canvas.width;
         let h = canvas.height;
 

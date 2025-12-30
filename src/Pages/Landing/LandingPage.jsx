@@ -40,7 +40,7 @@ function LandingPage() {
                 </Button>
             </Nav>
 
-            <LandingSection height="80vh" justify="center" align="center" primary>
+            <LandingSection height="80vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column">
                     <Text size="9" weight="bold">Bytecode,</Text>
@@ -48,11 +48,11 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection height="10vh" justify="center">
+            <LandingSection height="10vh" justify="center" secondary>
                 <Text size="7" weight="bold">More Info</Text>
             </LandingSection>
 
-            <LandingSection>
+            <LandingSection secondary>
                 section 3
             </LandingSection>
         </AuthProvider>
