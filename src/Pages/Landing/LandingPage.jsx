@@ -38,12 +38,13 @@ function LandingPage() {
                     Home
                 </Button>
             </Nav>
-            <LandingSection height="80vh" primary>
-                section 1
+
+            <LandingSection height="80vh" justify="center" align="center" primary>
+                <Text>Bytecode</Text>
             </LandingSection>
 
-            <LandingSection height="10vh">
-                <Text>More Info</Text>
+            <LandingSection height="10vh" justify="center">
+                <Text size="7" weight="bold">More Info</Text>
             </LandingSection>
 
             <LandingSection>
