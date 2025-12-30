@@ -54,14 +54,10 @@ function matrix (ctx,ypos,cols,charset,offsets,w,h,bg,primary) {
 
     ypos.forEach((y, ind) => {
         let text;
-        let alt_text;
         text = charset[(offsets[ind] + y / 20) % charset.length];
         const x = ind * 35;
 
         ctx.fillText(text, x, y);
-        if(alt_text!=null){
-            ctx.fillText(alt_text, x, y);
-        }
 
         if (y > 100 + Math.random() * 10000){
             ypos[ind] = 0;
