@@ -22,9 +22,6 @@ function MatrixBg(props) {
 
         ctx.fillStyle = bg;
         ctx.fillRect(0, 0, w, h);
-
-        ctx.fillStyle = '#00ff00';
-        console.log(bg);
         ctx.font = "15pt "+font;
 
         let cols = Math.floor(w / 20) + 1;
