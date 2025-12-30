@@ -1,7 +1,7 @@
-.radix-theme {
-    --default-font-family: var(--ui-font);
-    --heading-font-family: var(--ui-font);
-    --code-font-family: var(--mono-font);
+.radix-themes {
+    --default-font-family: var(--ui-font) !important;
+    --heading-font-family: var(--ui-font) !important;
+    --code-font-family: var(--mono-font) !important;
 }
 
 .dark, .dark-theme {
