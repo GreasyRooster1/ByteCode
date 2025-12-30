@@ -2,22 +2,21 @@ import React, {useEffect, useState} from 'react';
 
 function Blinker(props) {
     const [isVisible, setVisible] = useState(false);
-    let intervalId = null;
     useEffect(() => {
         const toggle=()=>{
-            setVisible(!isVisible);
+            setVisible((v)=>!v);
         }
 
-        intervalId=setInterval(toggle,props.delay??100)
+        let intervalId=setInterval(toggle,props.delay??1000)
 
         return () => {
-            clearInterval(intervalId);
+            if(intervalId) clearInterval(intervalId);
         }
     }, []);
 
     return (
         <>
-            {isVisible && <>{props.children}</>}
+            {isVisible ? props.children : props.alt}
         </>
     );
 }

@@ -10,6 +10,7 @@ import LandingSection from "~/Pages/Landing/LandingSection.jsx";
 import TextScroll from "~/Pages/Landing/components/TextScroll.jsx";
 import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 import TypedText from "~components/text/TypedText.jsx";
+import Blinker from "~components/Blinker.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -44,7 +45,7 @@ function LandingPage() {
             <LandingSection height="80vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column" align="center" justify="center">
-                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/></Text>
+                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>▁</span></Blinker></Text>
                     <br />
                     <Text size="7" weight="bold">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
                     <br /><br />
