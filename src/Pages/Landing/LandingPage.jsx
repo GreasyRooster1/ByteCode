@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Button, Text} from "@radix-ui/themes";
+import {Button, Flex, Text} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
@@ -40,7 +40,10 @@ function LandingPage() {
             </Nav>
 
             <LandingSection height="80vh" justify="center" align="center" primary>
-                <Text>Bytecode</Text>
+                <Flex width="80%" height="80%" direction="column">
+                    <Text size="9" weight="bold">Bytecode,</Text>
+                    <Text size="7" weight="bold">Learn coding one byte at a time</Text>
+                </Flex>
             </LandingSection>
 
             <LandingSection height="10vh" justify="center">
