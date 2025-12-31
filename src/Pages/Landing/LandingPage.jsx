@@ -67,14 +67,24 @@ function LandingPage() {
                         <FeatureCard
                             gridColumn="1 / 3"
                             heading="Easy to use editor"
-                            sub="Our editor can run all your students code straight from the browser. We have a wide selection of languages and platforms that are great for teaching beginning students to advanced programmers."
+                            sub="Built in editor. Students never need to leave the browser"
                         >
 
                         </FeatureCard>
+
                         <FeatureCard heading="Ready to go lesson plans" sub="bla">
 
                         </FeatureCard>
+
                         <FeatureCard heading="Adaptive pacing" sub="bla">
+
+                        </FeatureCard>
+
+                        <FeatureCard
+                            gridColumn="2 / 4"
+                            heading="Easy to use editor"
+                            sub="Built in editor. Students never need to leave the browser"
+                        >
 
                         </FeatureCard>
                     </Grid>
