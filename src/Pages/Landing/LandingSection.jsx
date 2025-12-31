@@ -14,7 +14,7 @@ function LandingSection(props) {
             {...props}
             width="100%"
             height={props.height??"70vh"}
-            className={`${bgStyle} ${props.className}`}
+            className={`${styles.section} ${bgStyle} ${props.className}`}
         >
             {props.children}
         </Flex>
