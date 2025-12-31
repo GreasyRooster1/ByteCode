@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Button, Code, Flex, Text} from "@radix-ui/themes";
+import {Box, Button, Card, Code, Flex, Grid, Heading, Text} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
@@ -59,7 +59,24 @@ function LandingPage() {
             </LandingSection>
 
             <LandingSection secondary>
-                section 3
+                <Flex width="100%" direction="column" align="center" justify="between">
+                <Heading>How it works</Heading>
+                <br/>
+                <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" flexGrow="1" style={{ padding: "2%" }}>
+                    <Card>
+                        <Heading>Built in lesson plans</Heading>
+                        <br/>
+                    </Card>
+                    <Card>
+                        <Heading>Built in lesson plans</Heading>
+                        <br/>
+                    </Card>
+                    <Card>
+                        <Heading>Built in lesson plans</Heading>
+                        <br/>
+                    </Card>
+                </Grid>
+                </Flex>
             </LandingSection>
         </AuthProvider>
     )
