@@ -20,29 +20,7 @@ function LandingPage() {
 
     return (
         <AuthProvider>
-            <Nav className={styles.nav}>
-                <UiSwitch value={auth.isAuthenticated}>
-                    <UiSwitch.True>
-                        <Button onClick={() => {
-                            localStorage.clear();
-                            sessionStorage.clear();
-                            window.location.reload();
-                            auth.signoutRedirect();
-                        }}>
-                            Log Out
-                        </Button>
-                    </UiSwitch.True>
-                    <UiSwitch.False>
-                        <Button onClick={() => auth.signinRedirect()}>Sign up/Login</Button>
-                    </UiSwitch.False>
-                </UiSwitch>
 
-                <Text size="4">ByteCode</Text>
-
-                <Button onClick={() => navigate("/home")}>
-                    Home
-                </Button>
-            </Nav>
 
             <LandingSection height="80vh" justify="center" align="center">
                 <MatrixBG />
@@ -101,6 +79,31 @@ function LandingPage() {
             <LandingSection>
                 section 4
             </LandingSection>
+
+
+            <Nav className={styles.nav}>
+                <UiSwitch value={auth.isAuthenticated}>
+                    <UiSwitch.True>
+                        <Button onClick={() => {
+                            localStorage.clear();
+                            sessionStorage.clear();
+                            window.location.reload();
+                            auth.signoutRedirect();
+                        }}>
+                            Log Out
+                        </Button>
+                    </UiSwitch.True>
+                    <UiSwitch.False>
+                        <Button onClick={() => auth.signinRedirect()}>Sign up/Login</Button>
+                    </UiSwitch.False>
+                </UiSwitch>
+
+                <Text size="4">ByteCode</Text>
+
+                <Button onClick={() => navigate("/home")}>
+                    Home
+                </Button>
+            </Nav>
         </AuthProvider>
     )
 }
