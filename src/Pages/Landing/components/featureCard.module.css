@@ -1,7 +1,19 @@
 .card{
     height:100%;
+    overflow:clip;
 }
 
-.card:hover{
-    border-color:var(--primary);
+.cardbox{
+    border-radius: 12px;
+    transition: 1s box-shadow;
+    box-shadow: 0 0 3px 0 var(--neutral-light),
+    inset -30px 10px 20px var(--neutral-light),
+    0 0 500px -100px rgba(0, 0, 0, 0);
+}
+
+.cardbox:hover{
+    box-shadow: 0 0 10px -5px var(--primary),
+    inset -30px 10px 20px var(--primary),
+    0 0 500px -100px var(--primary);
+
 }

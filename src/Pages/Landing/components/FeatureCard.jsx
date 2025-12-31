@@ -4,7 +4,7 @@ import styles from "./featureCard.module.css";
 
 function FeatureCard(props) {
     return (
-        <Box {...props} height="100%">
+        <Box {...props} className={`${styles.cardbox} ${props.className}`} height="100%">
             <Card className={styles.card}>
                 <Text size="5" weight="bold">{props.heading}</Text>
                 <br/>
