@@ -45,21 +45,14 @@ function LandingPage() {
             </Nav>
 
             <LandingSection height="80vh" justify="center" align="center">
-
-                    <Flex width="80%" height="80%" direction="column" align="center" justify="center">
-                        <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
-                        <br />
-                        <Text size="7" weight="bold" align="center">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
-                        <br /><br />
-                        <Button size="3" variant="outline">Get Started</Button>
-                    </Flex>
-                <motion.div
-                    initial={{ opacity: 0,zIndex:-999 }}
-                    animate={{ opacity: 1,
-                        transition: { duration: 2 }
-                    }}>
-                    <MatrixBG />
-                </motion.div>
+                <MatrixBG />
+                <Flex width="80%" height="80%" direction="column" align="center" justify="center">
+                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
+                    <br />
+                    <Text size="7" weight="bold" align="center">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
+                    <br /><br />
+                    <Button size="3" variant="outline">Get Started</Button>
+                </Flex>
             </LandingSection>
 
             <LandingSection height="20vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
