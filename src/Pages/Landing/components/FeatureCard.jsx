@@ -5,9 +5,9 @@ function FeatureCard(props) {
     return (
         <Box {...props} height="100%">
             <Card style={{height:"100%"}}>
-                <Heading>{props.heading}</Heading>
+                <Text size="5" weight="bold">{props.heading}</Text>
                 <br/>
-                <Text>{props.sub}</Text>
+                <Text color="gray"z>{props.sub}</Text>
                 {props.children}
             </Card>
         </Box>
