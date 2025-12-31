@@ -66,8 +66,8 @@ function LandingPage() {
                     <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
                         <FeatureCard
                             gridColumn="1 / 3"
-                            heading="Easy to use editor"
-                            sub="Built in editor. Students never need to leave the browser"
+                            heading="Built in code editor"
+                            sub="Students never need to leave the browser"
                         >
 
                         </FeatureCard>
