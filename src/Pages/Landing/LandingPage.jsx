@@ -22,7 +22,7 @@ function LandingPage() {
         <AuthProvider>
 
 
-            <LandingSection height="80vh" justify="center" align="center">
+            <LandingSection height="85vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column" align="center" justify="center">
                     <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
@@ -33,7 +33,7 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection height="20vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
+            <LandingSection height="15vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
                 <Text size="7" weight="bold">More Info</Text>
                 <Text size="5" weight="bold">V</Text>
             </LandingSection>
