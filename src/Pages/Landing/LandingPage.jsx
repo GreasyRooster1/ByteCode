@@ -64,15 +64,15 @@ function LandingPage() {
                 <br/>
                 <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" flexGrow="1" style={{ padding: "2%" }}>
                     <Card>
-                        <Heading>Built in lesson plans</Heading>
+                        <Heading>Easy to use editor</Heading>
                         <br/>
                     </Card>
                     <Card>
-                        <Heading>Built in lesson plans</Heading>
+                        <Heading>Ready to go lesson plans</Heading>
                         <br/>
                     </Card>
                     <Card>
-                        <Heading>Built in lesson plans</Heading>
+                        <Heading>Adaptive Pacing</Heading>
                         <br/>
                     </Card>
                 </Grid>
