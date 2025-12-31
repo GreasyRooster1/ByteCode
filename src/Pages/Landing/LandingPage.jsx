@@ -59,25 +59,25 @@ function LandingPage() {
                 <Text size="5" weight="bold">V</Text>
             </LandingSection>
 
-            <LandingSection secondary>
+            <LandingSection height="100vh" secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
-                <Heading>How it works</Heading>
-                <br/>
-                <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
-                    <FeatureCard
-                        gridColumn="1 / 3"
-                        heading="Easy to use editor"
-                        sub="Our editor can run all your students code straight from the browser. We have a wide selection of languages and platforms that are great for teaching beginning students to advanced programmers."
-                    >
+                    <Heading>How it works</Heading>
+                    <br/>
+                    <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
+                        <FeatureCard
+                            gridColumn="1 / 3"
+                            heading="Easy to use editor"
+                            sub="Our editor can run all your students code straight from the browser. We have a wide selection of languages and platforms that are great for teaching beginning students to advanced programmers."
+                        >
 
-                    </FeatureCard>
-                    <FeatureCard heading="Ready to go lesson plans" sub="bla">
+                        </FeatureCard>
+                        <FeatureCard heading="Ready to go lesson plans" sub="bla">
 
-                    </FeatureCard>
-                    <FeatureCard heading="Adaptive pacing" sub="bla">
+                        </FeatureCard>
+                        <FeatureCard heading="Adaptive pacing" sub="bla">
 
-                    </FeatureCard>
-                </Grid>
+                        </FeatureCard>
+                    </Grid>
                 </Flex>
             </LandingSection>
         </AuthProvider>
