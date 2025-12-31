@@ -11,6 +11,7 @@ import TextScroll from "~/Pages/Landing/components/TextScroll.jsx";
 import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 import TypedText from "~components/text/TypedText.jsx";
 import Blinker from "~components/Blinker.jsx";
+import FeatureCard from "~/Pages/Landing/components/FeatureCard.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -63,18 +64,15 @@ function LandingPage() {
                 <Heading>How it works</Heading>
                 <br/>
                 <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" flexGrow="1" style={{ padding: "2%" }}>
-                    <Card>
-                        <Heading>Easy to use editor</Heading>
-                        <br/>
-                    </Card>
-                    <Card>
-                        <Heading>Ready to go lesson plans</Heading>
-                        <br/>
-                    </Card>
-                    <Card>
-                        <Heading>Adaptive Pacing</Heading>
-                        <br/>
-                    </Card>
+                    <FeatureCard heading="Easy to use editor" sub="bla">
+
+                    </FeatureCard>
+                    <FeatureCard heading="Ready to go lesson plans" sub="bla">
+
+                    </FeatureCard>
+                    <FeatureCard heading="Adaptive pacing" sub="bla">
+
+                    </FeatureCard>
                 </Grid>
                 </Flex>
             </LandingSection>
