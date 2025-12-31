@@ -15,7 +15,7 @@ function MatrixBg(props) {
         const primary = window.getComputedStyle(radix, null).getPropertyValue("--primary");
 
         canvas.width  = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+        canvas.height = window.innerHeight;
 
         let w = canvas.width;
         let h = canvas.height;
