@@ -12,6 +12,7 @@ import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 import TypedText from "~components/text/TypedText.jsx";
 import Blinker from "~components/Blinker.jsx";
 import FeatureCard from "~/Pages/Landing/components/FeatureCard.jsx";
+import { motion } from "motion/react"
 
 function LandingPage() {
     const auth = useAuth();
@@ -44,14 +45,21 @@ function LandingPage() {
             </Nav>
 
             <LandingSection height="80vh" justify="center" align="center">
-                <MatrixBG />
-                <Flex width="80%" height="80%" direction="column" align="center" justify="center">
-                    <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
-                    <br />
-                    <Text size="7" weight="bold" align="center">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
-                    <br /><br />
-                    <Button size="3" variant="outline">Get Started</Button>
-                </Flex>
+
+                    <Flex width="80%" height="80%" direction="column" align="center" justify="center">
+                        <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
+                        <br />
+                        <Text size="7" weight="bold" align="center">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
+                        <br /><br />
+                        <Button size="3" variant="outline">Get Started</Button>
+                    </Flex>
+                <motion.div
+                    initial={{ opacity: 0,zIndex:-999 }}
+                    animate={{ opacity: 1,
+                        transition: { duration: 2 }
+                    }}>
+                    <MatrixBG />
+                </motion.div>
             </LandingSection>
 
             <LandingSection height="20vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
