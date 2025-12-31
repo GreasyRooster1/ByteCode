@@ -60,13 +60,13 @@ function LandingPage() {
                 <Text size="5" weight="bold">V</Text>
             </LandingSection>
 
-            <LandingSection height={{md:"120vh",lg:"100vh"}} secondary>
+            <LandingSection height="100vh" secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading>How it works</Heading>
                     <br/>
-                    <Grid columns={{md:"1",lg:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
+                    <Grid columns={{sm:"1",md:"2",lg:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
                         <FeatureCard
-                            gridColumn={{md:"1 / 1", lg:"1 / 3"}}
+                            gridColumn={{md:"unset", lg:"1 / 3"}}
                             heading="Built in code editor"
                             sub="Students never need to leave the browser"
                         >
@@ -88,7 +88,7 @@ function LandingPage() {
                         </FeatureCard>
 
                         <FeatureCard
-                            gridColumn={{md:"2 / 2", lg:"2 / 4"}}
+                            gridColumn={{md:"unset", lg:"2 / 4"}}
                             heading="Ready to go lesson plans"
                             sub="Follow a premade curriculum designed to teach effectively"
                         >
