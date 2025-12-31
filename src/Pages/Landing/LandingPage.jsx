@@ -72,18 +72,24 @@ function LandingPage() {
 
                         </FeatureCard>
 
-                        <FeatureCard heading="Ready to go lesson plans" sub="bla">
+                        <FeatureCard
+                            heading="Adaptive pacing"
+                            sub="Students follow lessons at their own pace"
+                        >
 
                         </FeatureCard>
 
-                        <FeatureCard heading="Adaptive pacing" sub="bla">
+                        <FeatureCard
+                            heading="Language support"
+                            sub="We support a variety of languages to teach with"
+                        >
 
                         </FeatureCard>
 
                         <FeatureCard
                             gridColumn="2 / 4"
-                            heading="Easy to use editor"
-                            sub="Built in editor. Students never need to leave the browser"
+                            heading="Ready to go lesson plans"
+                            sub="Follow a premade curriculum designed to teach effectively"
                         >
 
                         </FeatureCard>
