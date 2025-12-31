@@ -64,7 +64,10 @@ function LandingPage() {
                 <Heading>How it works</Heading>
                 <br/>
                 <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" flexGrow="1" style={{ padding: "2%" }}>
-                    <FeatureCard heading="Easy to use editor" sub="bla">
+                    <FeatureCard
+                        heading="Easy to use editor"
+                        sub="Our editor can run all your students code straight from the browser. We have a wide selection of languages and platforms that are great for teaching beginning students to advanced programmers."
+                    >
 
                     </FeatureCard>
                     <FeatureCard heading="Ready to go lesson plans" sub="bla">
