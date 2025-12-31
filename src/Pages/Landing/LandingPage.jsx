@@ -63,8 +63,9 @@ function LandingPage() {
                 <Flex width="100%" direction="column" align="center" justify="between">
                 <Heading>How it works</Heading>
                 <br/>
-                <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" flexGrow="1" style={{ padding: "2%" }}>
+                <Grid columns={{sm:"1",md:"3"}} gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
                     <FeatureCard
+                        gridColumn="1 / 3"
                         heading="Easy to use editor"
                         sub="Our editor can run all your students code straight from the browser. We have a wide selection of languages and platforms that are great for teaching beginning students to advanced programmers."
                     >
