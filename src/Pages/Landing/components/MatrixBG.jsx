@@ -22,7 +22,7 @@ function MatrixBg(props) {
 
         ctx.fillStyle = bg;
         ctx.fillRect(0, 0, w, h);
-        ctx.font = "20pt "+font;
+        ctx.font = "20pt system-ui"//+font;
 
         let cols = Math.floor(w / 20) + 1;
         let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*20)
