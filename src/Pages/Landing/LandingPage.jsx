@@ -30,6 +30,7 @@ function LandingPage() {
                     <Text size="7" weight="bold" align="center">Learn coding one <Code weight="bold" color={"purple"}>byte</Code> at a time</Text>
                     <br /><br />
                     <Button size="3" variant="outline">Get Started</Button>
+                    {/*<Text size="6" color="purple">Coming Soon...</Text>*/}
                 </Flex>
             </LandingSection>
 
