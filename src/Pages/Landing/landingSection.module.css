@@ -5,3 +5,7 @@
 .secondary{
     background-color: var(--neutral-med);
 }
+
+.section{
+    padding:12px;
+}
