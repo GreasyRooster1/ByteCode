@@ -11,8 +11,8 @@ function MatrixBg(props) {
 
         const radix = document.querySelector(".radix-themes");
         const font = window.getComputedStyle(radix, null).getPropertyValue("--default-font-family");
-        const bg = window.getComputedStyle(radix, null).getPropertyValue("--neutral-dark");
-        const primary = window.getComputedStyle(radix, null).getPropertyValue("--primary");
+        const bg = "#000000"//window.getComputedStyle(radix, null).getPropertyValue("--neutral-dark");
+        const primary = "#ff00ff"//window.getComputedStyle(radix, null).getPropertyValue("--primary");
 
         canvas.width  = canvas.offsetWidth;
         canvas.height = window.innerHeight;
