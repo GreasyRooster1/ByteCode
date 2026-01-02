@@ -21,7 +21,6 @@ function LandingPage() {
     return (
         <AuthProvider>
 
-
             <LandingSection height="90vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column" align="center" justify="center">
@@ -80,7 +79,6 @@ function LandingPage() {
             <LandingSection>
                 section 4
             </LandingSection>
-
 
             <Nav className={styles.nav}>
                 <UiSwitch value={auth.isAuthenticated}>
