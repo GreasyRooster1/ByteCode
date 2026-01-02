@@ -38,6 +38,7 @@ function LandingPage() {
                 <Text size="4" weight="bold">V</Text>
             </LandingSection>
 
+
             <LandingSection height="100vh" secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading>How it works</Heading>
@@ -73,6 +74,12 @@ function LandingPage() {
 
                         </FeatureCard>
                     </Grid>
+                </Flex>
+            </LandingSection>
+
+            <LandingSection>
+                <Flex width="100%" direction="column" align="center" justify="between">
+                    <Heading>Tested on real students</Heading>
                 </Flex>
             </LandingSection>
 
