@@ -60,7 +60,7 @@ function LandingPage() {
 
                         <FeatureCard
                             heading="Language support"
-                            sub="We support a variety of languages to teach with"
+                            sub="We support a variety of popular languages to teach with"
                         >
 
                         </FeatureCard>
