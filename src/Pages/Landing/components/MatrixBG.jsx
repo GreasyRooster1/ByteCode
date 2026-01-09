@@ -1,6 +1,9 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './matrixBG.module.css';
 
+const xinc = 35;
+const yinc = 23;
+
 function MatrixBg(props) {
     const canvasRef = useRef(null);
     let intervalId = null
@@ -9,23 +12,22 @@ function MatrixBg(props) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
-        const radix = document.querySelector(".radix-themes");
-        const font = window.getComputedStyle(radix, null).getPropertyValue("--default-font-family");
-        const bg = "#000000"//window.getComputedStyle(radix, null).getPropertyValue("--neutral-dark");
-        const primary = "#ff00ff"//window.getComputedStyle(radix, null).getPropertyValue("--primary");
+        const font = "20pt JetBrains Mono"
+        const bg = "#0F0F10"
+        const primary = "#8A13E5"
 
         canvas.width  = canvas.offsetWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = canvas.offsetWidth;
 
         let w = canvas.width;
         let h = canvas.height;
 
         ctx.fillStyle = bg;
         ctx.fillRect(0, 0, w, h);
-        ctx.font = "20pt system-ui"//+font;
+        ctx.font = font;
 
-        let cols = Math.floor(w / 20) + 1;
-        let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*20)
+        let cols = Math.floor(w / xinc) + 1;
+        let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*yinc)
         let charset = "ByteCode";//charsets[Math.floor(Math.random()*charsets.length)];
         let offsets = Array(cols).fill(0).map(() => Math.round(Math.random() * charset.length));
         const render = ()=>{
@@ -54,14 +56,14 @@ function matrix (ctx,ypos,cols,charset,offsets,w,h,bg,primary) {
 
     ypos.forEach((y, ind) => {
         let text;
-        text = charset[(offsets[ind] + y / 20) % charset.length];
-        const x = ind * 35;
+        text = charset[(offsets[ind] + y / yinc) % charset.length];
+        const x = ind * xinc;
 
         ctx.fillText(text, x, y);
 
         if (y > 100 + Math.random() * 10000){
             ypos[ind] = 0;
-        }else ypos[ind]+=20;
+        }else ypos[ind]+=yinc;
     });
 }
 

@@ -21,8 +21,7 @@ function LandingPage() {
     return (
         <AuthProvider>
 
-
-            <LandingSection height="85vh" justify="center" align="center">
+            <LandingSection height="90vh" justify="center" align="center">
                 <MatrixBG />
                 <Flex width="80%" height="80%" direction="column" align="center" justify="center">
                     <Text size="9" weight="bold"><TypedText text={"ByteCode"} delay={90} raw/><Blinker><span>_</span></Blinker></Text>
@@ -34,10 +33,11 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection height="15vh" justify="center" align="center" direction="column" className={styles.moreInfo}>
-                <Text size="7" weight="bold">More Info</Text>
-                <Text size="5" weight="bold">V</Text>
+            <LandingSection height="10vh" justify="end" align="center" direction="column" className={styles.moreInfo}>
+                <Text size="5" weight="bold">More Info</Text>
+                <Text size="4" weight="bold">V</Text>
             </LandingSection>
+
 
             <LandingSection height="100vh" secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
@@ -61,7 +61,7 @@ function LandingPage() {
 
                         <FeatureCard
                             heading="Language support"
-                            sub="We support a variety of languages to teach with"
+                            sub="We support a variety of popular languages to teach with"
                         >
 
                         </FeatureCard>
@@ -78,9 +78,14 @@ function LandingPage() {
             </LandingSection>
 
             <LandingSection>
-                section 4
+                <Flex width="100%" direction="column" align="center" justify="between">
+                    <Heading>Tested on real students</Heading>
+                </Flex>
             </LandingSection>
 
+            <LandingSection>
+                section 4
+            </LandingSection>
 
             <Nav className={styles.nav}>
                 <UiSwitch value={auth.isAuthenticated}>
