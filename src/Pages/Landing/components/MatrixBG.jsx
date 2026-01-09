@@ -17,7 +17,7 @@ function MatrixBg(props) {
         const primary = "#8A13E5"
 
         canvas.width  = canvas.offsetWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = canvas.offsetWidth;
 
         let w = canvas.width;
         let h = canvas.height;
