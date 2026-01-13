@@ -8,6 +8,18 @@ function MatrixBg(props) {
     const canvasRef = useRef(null);
     let intervalId = null
 
+    // useEffect(()=>{
+    //     const updateSize = () => {
+    //         const canvas = canvasRef.current;
+    //         canvas.width  = canvas.offsetWidth;
+    //         canvas.height = canvas.offsetWidth;
+    //     }
+    //     window.addEventListener('resize', updateSize);
+    //     return () => {
+    //         window.removeEventListener('resize', updateSize);
+    //     }
+    // })
+
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
@@ -16,27 +28,28 @@ function MatrixBg(props) {
         const bg = "#0F0F10"
         const primary = "#8A13E5"
 
-        canvas.width  = canvas.offsetWidth;
-        canvas.height = window.innerHeight;
+        let square = Math.max(window.innerWidth,window.innerHeight)
+        canvas.width  = square;
+        canvas.height = square;
 
-        let w = canvas.width;
-        let h = canvas.height;
 
         ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, w, h);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.font = font;
 
-        let cols = Math.floor(w / xinc) + 1;
+        let cols = Math.floor(canvas.width / xinc) + 1;
         let ypos = Array(cols).fill(0).map(() => Math.round(Math.random() *100)*yinc)
         let charset = "ByteCode";//charsets[Math.floor(Math.random()*charsets.length)];
         let offsets = Array(cols).fill(0).map(() => Math.round(Math.random() * charset.length));
         const render = ()=>{
-            matrix(ctx,ypos,cols,charset,offsets,w,h,bg,primary)
+            matrix(ctx,ypos,cols,charset,offsets,canvas.width,canvas.height,bg,primary)
         }
 
         intervalId = setInterval(render,70);
 
         return () => {
+            canvas.width = null;
+            canvas.height = null;
             if (intervalId) {
                 clearInterval(intervalId);
             }
