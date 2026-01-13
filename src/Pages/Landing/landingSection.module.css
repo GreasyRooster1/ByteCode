@@ -8,6 +8,8 @@
 
 .section{
     padding:12px;
+    width:100vw;
+    position:relative;
 }
 
 .black{
