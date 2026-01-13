@@ -9,3 +9,7 @@
 .section{
     padding:12px;
 }
+
+.black{
+    background-color: var(--neutral-dark);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Flex, Section} from "@radix-ui/themes";
+import {Flex} from "@radix-ui/themes";
 import styles from "./landingSection.module.css";
 
 function LandingSection(props) {
@@ -8,6 +8,8 @@ function LandingSection(props) {
         bgStyle = styles.primary
     }else if(props.secondary){
         bgStyle = styles.secondary
+    }else if(props.black{
+        bgStyle = styles.black
     }
     return (
         <Flex
