@@ -2,17 +2,15 @@ import React from 'react';
 import AuthProvider from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Box, Button, Card, Code, Flex, Grid, Heading, Text} from "@radix-ui/themes";
+import {Button, Code, Flex, Grid, Heading, Text} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
 import LandingSection from "~/Pages/Landing/LandingSection.jsx";
-import TextScroll from "~/Pages/Landing/components/TextScroll.jsx";
 import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 import TypedText from "~components/text/TypedText.jsx";
 import Blinker from "~components/Blinker.jsx";
 import FeatureCard from "~/Pages/Landing/components/FeatureCard.jsx";
-import { motion } from "motion/react"
 
 function LandingPage() {
     const auth = useAuth();
@@ -79,12 +77,16 @@ function LandingPage() {
 
             <LandingSection>
                 <Flex width="100%" direction="column" align="center" justify="between">
-                    <Heading>Tested on real students</Heading>
+                    <Heading size="8">Tested on real students</Heading>
                 </Flex>
             </LandingSection>
 
             <LandingSection>
-                section 4
+                <Flex width="100%" direction="column" align="center" justify="between">
+                    <FeatureCard>
+                        <Heading size="8">Our Mission</Heading>
+                    </FeatureCard>
+                </Flex>
             </LandingSection>
 
             <Nav className={styles.nav}>
