@@ -69,7 +69,7 @@ function LandingPage() {
 
                         <FeatureCard
                             heading="Language support"
-                            sub="We support the biggest programming langauge for jobs: JavaScript"
+                            sub="We support the largest programming langauge in real world jobs: JavaScript"
                         >
 
                         </FeatureCard>
