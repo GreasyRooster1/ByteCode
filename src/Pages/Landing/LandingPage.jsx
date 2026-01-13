@@ -36,7 +36,7 @@ function LandingPage() {
                 <Text size="4" weight="bold">V</Text>
             </LandingSection>
 
-            <LandingSection black>
+            <LandingSection secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Container>
                         <Heading align="center" size="8">Our Mission</Heading>
@@ -69,7 +69,7 @@ function LandingPage() {
 
                         <FeatureCard
                             heading="Language support"
-                            sub="We support a variety of popular languages to teach with"
+                            sub="We support the biggest programming langauge for jobs: JavaScript"
                         >
 
                         </FeatureCard>
@@ -85,7 +85,7 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection>
+            <LandingSection secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading size="8">Tested on real students</Heading>
                 </Flex>
