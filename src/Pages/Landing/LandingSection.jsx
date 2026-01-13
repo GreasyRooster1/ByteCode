@@ -8,7 +8,7 @@ function LandingSection(props) {
         bgStyle = styles.primary
     }else if(props.secondary){
         bgStyle = styles.secondary
-    }else if(props.black{
+    }else if(props.black){
         bgStyle = styles.black
     }
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Button, Code, Flex, Grid, Heading, Text} from "@radix-ui/themes";
+import {Button, Code, Container, Flex, Grid, Heading, Text} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import UiSwitch from "~components/UISwitch.jsx";
@@ -36,6 +36,16 @@ function LandingPage() {
                 <Text size="4" weight="bold">V</Text>
             </LandingSection>
 
+            <LandingSection black>
+                <Flex width="100%" direction="column" align="center" justify="between">
+                    <Container>
+                        <Heading align="center" size="8">Our Mission</Heading>
+                        <Text>
+                            lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+                        </Text>
+                    </Container>
+                </Flex>
+            </LandingSection>
 
             <LandingSection height="100vh" secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
@@ -78,14 +88,6 @@ function LandingPage() {
             <LandingSection>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading size="8">Tested on real students</Heading>
-                </Flex>
-            </LandingSection>
-
-            <LandingSection>
-                <Flex width="100%" direction="column" align="center" justify="between">
-                    <FeatureCard>
-                        <Heading size="8">Our Mission</Heading>
-                    </FeatureCard>
                 </Flex>
             </LandingSection>
 
