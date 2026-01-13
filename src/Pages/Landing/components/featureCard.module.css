@@ -6,14 +6,16 @@
 .cardbox{
     border-radius: 12px;
     transition: 1s box-shadow;
+}
+
+.glow{
     box-shadow: 0 0 3px 0 var(--neutral-light),
     inset -30px 10px 20px var(--neutral-light),
     0 0 500px -200px rgba(0, 0, 0, 0);
 }
 
-.cardbox:hover{
+.glow:hover{
     box-shadow: 0 0 10px -5px var(--primary),
     inset -30px 10px 20px var(--primary),
     0 0 500px -200px var(--primary);
-
 }
