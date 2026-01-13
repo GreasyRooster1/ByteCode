@@ -87,6 +87,12 @@ function LandingPage() {
 
             <LandingSection secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
+                    <Heading size="8"></Heading>
+                </Flex>
+            </LandingSection>
+
+            <LandingSection secondary>
+                <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading size="8">Tested on real students</Heading>
                 </Flex>
             </LandingSection>
