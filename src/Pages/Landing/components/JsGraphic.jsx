@@ -15,7 +15,7 @@ function JsGraphic(props) {
     }
 
     return (
-        <motion.svg xmlns="http://www.w3.org/2000/svg" width="244" height="102" viewBox="0 0 244 102" fill="none">
+        <motion.svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 102" fill="none">
             <defs>
                 <filter id="glow">
                     <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>

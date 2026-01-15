@@ -72,7 +72,7 @@ function LandingPage() {
                             heading="Language support"
                             sub="We support the largest programming langauge in real world jobs: JavaScript"
                         >
-                            <JsGraphic />
+                            <JsGraphic className={styles.graphic}/>
                         </FeatureCard>
 
                         <FeatureCard
