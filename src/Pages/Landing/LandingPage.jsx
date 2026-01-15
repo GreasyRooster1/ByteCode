@@ -11,6 +11,7 @@ import MatrixBG from "~/Pages/Landing/components/MatrixBG.jsx";
 import TypedText from "~components/text/TypedText.jsx";
 import Blinker from "~components/Blinker.jsx";
 import FeatureCard from "~/Pages/Landing/components/FeatureCard.jsx";
+import JsGraphic from "~/Pages/Landing/components/JsGraphic.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -71,7 +72,7 @@ function LandingPage() {
                             heading="Language support"
                             sub="We support the largest programming langauge in real world jobs: JavaScript"
                         >
-
+                            <JsGraphic />
                         </FeatureCard>
 
                         <FeatureCard
