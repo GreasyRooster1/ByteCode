@@ -7,11 +7,12 @@ const yinc = 23;
 function MatrixBg(props) {
     const canvasRef = useRef(null);
     let intervalId = null
-    const [size, setSize] = useState(0);
+    const [size, setSize] = useState({w:0,h:0});
 
     useEffect(()=>{
         const updateSize = () => {
-            setSize(Math.max(window.innerWidth,window.innerHeight));
+            setSize({w:document.documentElement.clientWidth,h:document.documentElement.clientHeight});
+            console.log({w:window.innerWidth,h:window.innerHeight})
         }
         window.addEventListener('resize', updateSize);
         updateSize();
@@ -28,8 +29,8 @@ function MatrixBg(props) {
         const bg = "#0F0F10"
         const primary = "#8A13E5"
 
-        canvas.width  = size;
-        canvas.height = size;
+        canvas.width  = size.w;
+        canvas.height = size.h;
 
 
         ctx.fillStyle = bg;
