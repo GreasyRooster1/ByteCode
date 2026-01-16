@@ -1,5 +1,7 @@
 .canvas{
     z-index: -999;
+
+    /*fixed is somewhat interesting*/
     position: absolute;
     top: 0;
     left: 0;

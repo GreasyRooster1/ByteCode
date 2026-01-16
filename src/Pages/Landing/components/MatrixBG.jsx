@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './matrixBG.module.css';
 
 const xinc = 35;
@@ -7,18 +7,18 @@ const yinc = 23;
 function MatrixBg(props) {
     const canvasRef = useRef(null);
     let intervalId = null
+    const [size, setSize] = useState(0);
 
-    // useEffect(()=>{
-    //     const updateSize = () => {
-    //         const canvas = canvasRef.current;
-    //         canvas.width  = canvas.offsetWidth;
-    //         canvas.height = canvas.offsetWidth;
-    //     }
-    //     window.addEventListener('resize', updateSize);
-    //     return () => {
-    //         window.removeEventListener('resize', updateSize);
-    //     }
-    // })
+    useEffect(()=>{
+        const updateSize = () => {
+            setSize(Math.max(window.innerWidth,window.innerHeight));
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => {
+            window.removeEventListener('resize', updateSize);
+        }
+    },[])
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -28,9 +28,8 @@ function MatrixBg(props) {
         const bg = "#0F0F10"
         const primary = "#8A13E5"
 
-        let square = Math.max(window.innerWidth,window.innerHeight)
-        canvas.width  = square;
-        canvas.height = square;
+        canvas.width  = size;
+        canvas.height = size;
 
 
         ctx.fillStyle = bg;
@@ -54,7 +53,7 @@ function MatrixBg(props) {
                 clearInterval(intervalId);
             }
         }
-    },[])
+    },[size])
 
     return (
         <canvas className={styles.canvas} ref={canvasRef}/>
