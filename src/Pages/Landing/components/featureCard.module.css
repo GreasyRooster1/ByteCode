@@ -2,13 +2,16 @@
     height:100%;
     overflow:clip;
     background:var(--neutral-med);
-    border-radius:10px;
     overflow: clip;
+    border-radius: 12px;
+    transition: 1s box-shadow, .5s transform;
+    position: relative;
+    padding:12px;
 }
 
-.cardbox{
-    border-radius: 12px;
-    transition: 1s box-shadow;
+.card:hover{
+    transform: scale(1.02);
+    overflow: clip;
 }
 
 .glow{
