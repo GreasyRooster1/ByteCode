@@ -4,23 +4,23 @@ import {motion} from "motion/react";
 function JsGraphic(props) {
 
     let yellowPulseAnim = {
-        initial:{pathLength:.2,pathOffset:1,pathSpacing:1},
-        animate:{pathLength:.2,pathOffset:-.5,pathSpacing:1},
+        initial:{pathLength:.2,pathOffset:1,pathSpacing:10},
+        animate:{pathLength:.2,pathOffset:-.5,pathSpacing:10},
         transition:{
             repeatType:"loop",
             repeat:Infinity,
-            duration:1,
+            duration:4,
         },
         filter:"url(#glow)"
     }
 
     let bigGlowAnim = {
-        initial:{pathLength:.5,pathOffset:1,pathSpacing:1},
-        animate:{pathLength:.5,pathOffset:-.5,pathSpacing:1},
+        initial:{pathLength:.5,pathOffset:.9    ,pathSpacing:10},
+        animate:{pathLength:.5,pathOffset:-.6,pathSpacing:10},
         transition:{
             repeatType:"loop",
             repeat:Infinity,
-            duration:1,
+            duration:4,
         },
         filter:"url(#bigGlow)",
         mask:"url(#wireMask)"
@@ -79,7 +79,7 @@ function JsGraphic(props) {
             <motion.path {...yellowPulseAnim} d="M233.5 101.5H165C162.791 101.5 161 99.7091 161 97.5V89C161 86.7909 159.209 85 157 85H141" stroke="#F1C31C"/>
             <motion.path {...yellowPulseAnim} d="M243.5 80H175C172.791 80 171 78.2091 171 76V67.5C171 65.2909 169.209 63.5 167 63.5H151" stroke="#F1C31C"/>
 
-            <motion.path {...bigGlowAnim} d="M11 0.5H79.5C81.7091 0.5 83.5 2.29086 83.5 4.5V13C83.5 15.2091 85.2909 17 87.5 17H103.5" stroke="#F00"/>
+            <motion.path {...bigGlowAnim} d="M11 0.5H79.5C81.7091 0.5 83.5 2.29086 83.5 4.5V13C83.5 15.2091 85.2909 17 87.5 17H103.5" stroke="#F1C31C"/>
             <motion.path {...bigGlowAnim} d="M0 28.5H68.5C70.7091 28.5 72.5 30.2909 72.5 32.5V41C72.5 43.2091 74.2909 45 76.5 45H92.5" stroke="#F1C31C"/>
             <motion.path {...bigGlowAnim} d="M10 101.5H78.5C80.7091 101.5 82.5 99.7091 82.5 97.5V89C82.5 86.7909 84.2909 85 86.5 85H102.5" stroke="#F1C31C"/>
             <motion.path {...bigGlowAnim} d="M0 80H68.5C70.7091 80 72.5 78.2091 72.5 76V67.5C72.5 65.2909 74.2909 63.5 76.5 63.5H92.5" stroke="#F1C31C"/>
