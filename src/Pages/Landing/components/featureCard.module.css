@@ -6,12 +6,18 @@
     border-radius: 12px;
     transition: 1s box-shadow, .5s transform;
     position: relative;
-    padding:12px;
+    z-index: 1;
 }
 
 .card:hover{
     transform: scale(1.02);
     overflow: clip;
+}
+
+.text{
+    z-index: 10;
+    padding:12px;
+    background:linear-gradient(to bottom, var(--neutral-med) 0%, var(--neutral-med) 50%, transparent 100%);
 }
 
 .glow{
