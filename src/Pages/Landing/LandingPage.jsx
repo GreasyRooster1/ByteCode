@@ -48,11 +48,11 @@ function LandingPage() {
                 </Flex>
             </LandingSection>
 
-            <LandingSection height={{initial:"200vh",md:"100vh"}} secondary>
+            <LandingSection height={{initial:"200vh",sm:"100vh"}} secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
                     <Heading>How it works</Heading>
                     <br/>
-                    <Grid columns={{sm:"1",md:"2",lg:"3"}}  gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
+                    <Grid columns={{initial:"1",sm:"2",lg:"3"}}  gap={{initial:"3",sm:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
                         <FeatureCard
                             gridColumn={{md:"unset", lg:"1 / 3"}}
                             heading="Built in code editor"
