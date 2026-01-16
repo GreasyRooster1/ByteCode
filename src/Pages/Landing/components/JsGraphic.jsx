@@ -9,7 +9,7 @@ function JsGraphic(props) {
         transition:{
             repeatType:"loop",
             repeat:Infinity,
-            duration:4,
+            duration:2,
         },
         filter:"url(#glow)"
     }
@@ -20,7 +20,7 @@ function JsGraphic(props) {
         transition:{
             repeatType:"loop",
             repeat:Infinity,
-            duration:4,
+            duration:2,
         },
         filter:"url(#bigGlow)",
         mask:"url(#wireMask)"
@@ -33,6 +33,14 @@ function JsGraphic(props) {
                     <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
                     <feMerge>
                         <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+
+                <filter id="smGlow">
+                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur3"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur3"/>
                         <feMergeNode in="SourceGraphic"/>
                     </feMerge>
                 </filter>
@@ -88,7 +96,12 @@ function JsGraphic(props) {
             <motion.path {...bigGlowAnim} d="M233.5 101.5H165C162.791 101.5 161 99.7091 161 97.5V89C161 86.7909 159.209 85 157 85H141" stroke="#F1C31C"/>
             <motion.path {...bigGlowAnim} d="M243.5 80H175C172.791 80 171 78.2091 171 76V67.5C171 65.2909 169.209 63.5 167 63.5H151" stroke="#F1C31C"/>
 
-            <circle cx="121.5" cy="49" r="41.5" fill="#F1C31C" filter="url(#glow)"/>
+            <motion.circle
+                // initial={{fill:"#181819"}}
+                // whileInView={{fill:"#F1C31C"}}
+                // transition={{duration:2}}
+                // viewport={{ once: true, amount: .5 }}
+                cx="121.5" cy="49" r="41.5" fill="#F1C31C" filter="url(#smGlow)"/>
             <path d="M129.665 57.9919C131.621 61.1548 134.166 63.4797 138.667 63.4797C142.448 63.4797 144.864 61.6082 144.864 59.0223C144.864 55.9235 142.382 54.8259 138.22 53.0231L135.939 52.0538C129.354 49.2755 124.979 45.7951 124.979 38.4373C124.979 31.6596 130.194 26.5 138.343 26.5C144.145 26.5 148.317 28.4997 151.322 33.7357L144.216 38.2541C142.652 35.4759 140.964 34.3814 138.343 34.3814C135.67 34.3814 133.976 36.0605 133.976 38.2541C133.976 40.9652 135.672 42.0628 139.587 43.7419L141.869 44.7097C149.622 48.0024 154 51.3592 154 58.9063C154 67.0426 147.546 71.5 138.878 71.5C130.403 71.5 124.928 67.5005 122.249 62.2585L129.665 57.9919ZM97.4283 58.775C98.8619 61.2938 100.166 63.4232 103.301 63.4232C106.299 63.4232 108.191 62.2616 108.191 57.7446V27.016H117.316V57.8667C117.316 67.2242 111.776 71.4832 103.69 71.4832C96.3832 71.4832 92.1519 67.7387 90 63.2286L97.4283 58.775Z" fill="black"/>
         </motion.svg>
     );
