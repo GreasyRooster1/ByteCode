@@ -8,6 +8,7 @@
     height:48px;
 
     transition: top 0.7s;
+    z-index: 999;
 }
 
 .navInner{
