@@ -7,6 +7,7 @@
     transition: 1s box-shadow, .5s transform;
     position: relative;
     z-index: 1;
+    border: 1px solid var(--neutral-med);
 }
 
 .card:hover{
@@ -27,7 +28,7 @@
 }
 
 .glow:hover{
-    box-shadow: 0 0 10px -5px var(--neutral-light),
+    box-shadow: 0 0 2px 0 var(--neutral-light),
     0 0 500px -200px var(--neutral-light),
     0 0 100px -70px var(--neutral-light);
 }
