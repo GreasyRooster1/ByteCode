@@ -63,7 +63,7 @@ function LandingPage() {
 
                         <FeatureCard
                             heading="Adaptive pacing"
-                            sub="Students follow lessons at their own pace"
+                            sub="Course flow can adapt to any level of programmer"
                         >
 
                         </FeatureCard>
