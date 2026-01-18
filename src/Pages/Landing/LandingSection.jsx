@@ -15,6 +15,7 @@ function LandingSection(props) {
             {...props}
             width="100%"
             height={props.height??"70vh"}
+            justify="center"
             className={`${styles.section} ${bgStyle} ${props.className}`}
         >
             {props.children}
