@@ -39,7 +39,12 @@ function EditorGraphic(props) {
                 <rect width="533" height="305" rx="9" fill="#0F0F10"/>
                 <rect x="328" y="-6" width="232" height="320" rx="8" fill="#0F0F10" stroke="#46494C" stroke-width="2"/>
                 <rect x="328" y="197" width="232" height="320" fill="#0F0F10" stroke="#46494C" stroke-width="2"/>
-                <rect x="379" y="42" width="116" height="116" rx="17" fill="#DC1B4B"/>
+                <motion.rect
+                    initial={{scale:0,rotate:0}}
+                    whileInView={{scale:1,rotate:360}}
+                    viewport={{ once: true, amount: 0.9 }}
+                    transition={{duration:1,delay:3}}
+                    x="379" y="42" width="116" height="116" rx="17" fill="#DC1B4B"/>
             </g>
             <g mask="url(#codeMask">
                 <motion.rect {...getLineAnim(0,142)} x="14" y="14" height="30" rx="15" fill="#46494C"/>
