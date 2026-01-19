@@ -66,7 +66,7 @@ function LandingPage() {
                             heading="Adaptive pacing"
                             sub="Course flow can adapt to any level of programmer"
                         >
-
+                            <JsGraphic className={styles.graphic}/>
                         </FeatureCard>
 
                         <FeatureCard
@@ -81,7 +81,7 @@ function LandingPage() {
                             heading="Ready to go lesson plans"
                             sub="Follow a premade curriculum designed to teach effectively"
                         >
-
+                            <EditorGraphic className={styles.graphic}/>
                         </FeatureCard>
                     </Grid>
                 </Flex>

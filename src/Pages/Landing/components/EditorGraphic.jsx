@@ -3,7 +3,7 @@ import {motion} from "motion/react";
 
 function EditorGraphic(props) {
     return (
-        <motion.svg width="533" height="305" viewBox="0 0 533 305" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <motion.svg className={props.className} viewBox="0 0 533 305" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_26_2" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="0" y="0" width="533" height="305">
                 <rect width="533" height="305" rx="9" fill="#0F0F10"/>
             </mask>
