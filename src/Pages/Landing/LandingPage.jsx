@@ -12,6 +12,7 @@ import TypedText from "~components/text/TypedText.jsx";
 import Blinker from "~components/Blinker.jsx";
 import FeatureCard from "~/Pages/Landing/components/FeatureCard.jsx";
 import JsGraphic from "~/Pages/Landing/components/JsGraphic.jsx";
+import EditorGraphic from "~/Pages/Landing/components/EditorGraphic.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -58,7 +59,7 @@ function LandingPage() {
                             heading="Built in code editor"
                             sub="Students never need to leave the browser"
                         >
-
+                            <EditorGraphic className={styles.graphic}/>
                         </FeatureCard>
 
                         <FeatureCard
