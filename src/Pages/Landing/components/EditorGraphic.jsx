@@ -10,7 +10,6 @@ function EditorGraphic(props) {
             </mask>
             <g mask="url(#mask0_26_2)">
                 <rect width="533" height="305" rx="9" fill="#0F0F10"/>
-                <rect width="533" height="305" rx="9" stroke="#1CF16E"/>
                 <rect x="14" y="14" width="214.031" height="29.6" rx="14.8" fill="#1974E8"/>
                 <rect x="48.1538" y="50.4308" width="214.031" height="29.6" rx="14.8" fill="#46494C"/>
                 <rect x="48.1538" y="86.8615" width="214.031" height="29.6" rx="14.8" fill="#1CF16E"/>
