@@ -22,9 +22,26 @@ function EditorGraphic(props) {
 
     return (
         <motion.svg className={props.className} style={{width:"85S%"}} viewBox="0 0 533 305" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_26_2" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="0" y="0" width="533" height="305">
-                <rect width="533" height="305" rx="9" fill="#0F0F10"/>
-            </mask>
+            <defs>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="7" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+                <filter id="blur">
+                    <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                    </feMerge>
+                </filter>
+
+                <mask id="mask0_26_2" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="0" y="0" width="533" height="305">
+                    <rect width="533" height="305" rx="9" fill="#0F0F10"/>
+                </mask>
+            </defs>
+
             <motion.mask
                 initial={{height:0}}
                 whileInView={{height:305}}
@@ -39,11 +56,19 @@ function EditorGraphic(props) {
                 <rect width="533" height="305" rx="9" fill="#0F0F10"/>
                 <rect x="328" y="-6" width="232" height="320" rx="8" fill="#0F0F10" stroke="#46494C" stroke-width="2"/>
                 <rect x="328" y="197" width="232" height="320" fill="#0F0F10" stroke="#46494C" stroke-width="2"/>
+                <motion.circle
+                    initial={{scale:0,rotate:0,opacity:0}}
+                    whileInView={{scale:1,rotate:360,opacity:0.1}}
+                    viewport={{ once: true, amount: 0.9 }}
+                    transition={{duration:1,delay:3}}
+                    filter="url(#blur)"
+                    cx="437" cy="100" r="100" rx="17" fill="#DC1B4B"/>
                 <motion.rect
                     initial={{scale:0,rotate:0}}
                     whileInView={{scale:1,rotate:360}}
                     viewport={{ once: true, amount: 0.9 }}
                     transition={{duration:1,delay:3}}
+                    filter="url(#glow)"
                     x="379" y="42" width="116" height="116" rx="17" fill="#DC1B4B"/>
             </g>
             <g mask="url(#codeMask">
