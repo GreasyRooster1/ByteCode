@@ -39,9 +39,11 @@ function LandingPage() {
             </LandingSection>
 
             <LandingSection height="80vh" secondary>
-                <Flex margin="9" width="100%" height="100%" direction="row" align="center" justify="between">
-                    <Heading size="8">Who is ByteCode Made For?</Heading>
-                    <Flex height="100%" direction="column" align="center" justify="between">
+                <Flex p="9" width="100%" height="100%" direction="row" align="center" justify="between">
+                    <Flex width="50%">
+                        <Heading size="8">Who is ByteCode Made For?</Heading>
+                    </Flex>
+                    <Flex width="50%" height="100%" direction="column" align="center" justify="between">
                         <div>
                             <Heading size="6">Schools</Heading>
                             <Text>ByteCode lessons provide a well defined and rigorous course plan for teachers to follow</Text>
