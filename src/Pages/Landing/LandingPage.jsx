@@ -38,23 +38,23 @@ function LandingPage() {
                 {/*<Text size="4" weight="bold">V</Text>*/}
             </LandingSection>
 
-            <LandingSection height="80vh" secondary>
-                <Flex p="9" width="100%" height="100%" direction="row" align="center" justify="between">
-                    <Flex width="50%">
-                        <Heading size="8">Who is ByteCode Made For?</Heading>
+            <LandingSection secondary>
+                <Flex p={{sm:"3",md:"5",lg:"7"}} width="100%" height="100%" direction={{initial:"column",sm:"row"}} align="center" justify="between">
+                    <Flex>
+                        <Heading size="8" mb="8">Who is ByteCode Made For?</Heading>
                     </Flex>
-                    <Flex width="50%" height="100%" direction="column" align="center" justify="between">
+                    <Flex width={{md:"unset",lg:"50%"}} height={{md:"unset",lg:"100%"}} direction="column" align="center" justify="between">
                         <div>
-                            <Heading size="6">Schools</Heading>
+                            <Heading size="6" mb="2">Schools</Heading>
                             <Text>ByteCode lessons provide a well defined and rigorous course plan for teachers to follow</Text>
                             <Text>Our editor allows students to have all their projects in one place, without ever needing to leave the browser</Text>
                         </div>
                         <div>
-                            <Heading size="6">Extracurricular</Heading>
+                            <Heading size="6" mb="2">Extracurricular</Heading>
                             <Text>ByteCode lessons also provide a course structure for at-your-own-pace learning, perfect for after school programs or clubs</Text>
                         </div>
                         <div>
-                            <Heading size="6">Individuals</Heading>
+                            <Heading size="6" mb="2">Individuals</Heading>
                             <Text>Individuals can also learn with ByteCode. Follow lessons at your own pace, solve challenging programming problems, and make projects to learn programming</Text>
                         </div>
                     </Flex>
