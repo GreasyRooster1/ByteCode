@@ -40,18 +40,20 @@ function LandingPage() {
 
             <LandingSection secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
-                    <Container>
-                        <Heading align="center" size="8">Our Mission</Heading>
-                        <Text>
-                            lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
-                        </Text>
-                    </Container>
+                    <Heading size="8">Who is ByteCode Made For?</Heading>
+                    <Heading size="6">Schools</Heading>
+                    <Text>ByteCode lessons provide a well defined and rigorous course plan for teachers to follow</Text>
+                    <Text>Our editor allows students to have all their projects in one place, without ever needing to leave the browser</Text>
+                    <Heading size="6">Extracurricular</Heading>
+                    <Text>ByteCode lessons also provide a course structure for at-your-own-pace learning, perfect for after school programs or clubs</Text>
+                    <Heading size="6">Individuals</Heading>
+                    <Text>Individuals can also learn with ByteCode. Follow lessons at your own pace, solve challenging programming problems, and make projects to learn programming</Text>
                 </Flex>
             </LandingSection>
 
             <LandingSection height={{initial:"200vh",sm:"100vh",lg:"120vh"}} secondary>
                 <Flex width={{initial:"100%",lg:"80%"}} direction="column" align="center" justify="between">
-                    <Heading>How it works</Heading>
+                    <Heading size="8">How it works</Heading>
                     <br/>
                     <Grid columns={{initial:"1",sm:"2",lg:"2"}}  gap={{initial:"5",lg:"7"}} width="100%" height="100%" flexGrow="1" style={{ padding: "2%" }}>
                         <FeatureCard
@@ -89,7 +91,12 @@ function LandingPage() {
 
             <LandingSection secondary>
                 <Flex width="100%" direction="column" align="center" justify="between">
-                    <Heading size="8"></Heading>
+                    <Container>
+                        <Heading align="center" size="8">Our Mission</Heading>
+                        <Text>
+                            lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+                        </Text>
+                    </Container>
                 </Flex>
             </LandingSection>
 
