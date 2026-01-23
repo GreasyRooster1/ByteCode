@@ -18,9 +18,9 @@ function LandingPage() {
                 <UiSwitch value={auth.isAuthenticated}>
                     <UiSwitch.True>
                         <Button onClick={() => {
-                            localStorage.clear();
-                            sessionStorage.clear();
-                            window.location.reload();
+                            auth.signoutRedirect().then(() => {
+                                console.log("logged out");
+                            })
                         }}>
                             Log Out
                         </Button>
