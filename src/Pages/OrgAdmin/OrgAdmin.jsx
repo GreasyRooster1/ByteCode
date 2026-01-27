@@ -1,25 +1,22 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
+import AuthLock from "~components/AuthLock.jsx";
+import ScreenPage from "~components/screenPage/ScreenPage.jsx";
+import {net} from "~api/net/net.js";
 
 
 function OrgAdmin(props) {
     const params = useParams();
-
-    console.log(params)
+    const orgId = params.orgId;
     return (
-        <div>
-            Viewing user profile for ID: {params.orgid}
-        </div>
+        <AuthLock check={async (auth)=>{
+            return await net.org.isAdmin(auth.user?.access_token,[orgId],undefined)
+        }}>
+            <ScreenPage>
+                org admin
+            </ScreenPage>
+        </AuthLock>
     );
-    // return (
-    //     <AuthLock check={async (auth)=>{
-    //         return await net.org.isAdmin(auth.user?.access_token,[],undefined)
-    //     }}>
-    //         <ScreenPage>
-    //             org admin
-    //         </ScreenPage>
-    //     </AuthLock>
-    // );
 }
 
 export default OrgAdmin;

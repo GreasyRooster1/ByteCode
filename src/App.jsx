@@ -18,7 +18,7 @@ function App() {
         <Route path="/loadingTest" element={<LoadingTestPage />} />
         <Route path="/__authRedirect" element={<AuthRedirectPage />} />
 
-        <Route path="/org/:orgid/admin/" element={<OrgAdmin />} />
+        <Route path="/org/:orgId/admin/" element={<OrgAdmin />} />
       </Routes>
   )
 }
