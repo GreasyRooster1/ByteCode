@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import AuthProvider  from "./AuthProvider.jsx";
+import React from 'react';
 import LoadingScreen from "./LoadingScreen.jsx";
 import {useAuth} from "react-oidc-context";
-import {Navigate} from "react-router-dom";
 
 function AuthLock(props) {
     const auth = useAuth();
@@ -14,6 +12,14 @@ function AuthLock(props) {
     if (auth.error) {
         //todo error screen
         return <div>Encountering error... {auth.error.message}</div>;
+    }
+
+    if(props.check){
+        if(props.check()&&auth.isAuthenticated){
+            return props.children;
+        }else{
+            return auth.signinRedirect();
+        }
     }
 
     if(auth.isAuthenticated) {
