@@ -55,7 +55,7 @@ function jsonReq(uri){
 
 function passFailReq(uri){
     return authReq(uri,"GET", async (response)=>{
-        return await response.ok();
+        return response.ok;
     })
 }
 
