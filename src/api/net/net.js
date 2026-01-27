@@ -1,4 +1,4 @@
-import {fileReq, jsonReq, noArgReq, postReq, uploadReq} from "./netutils.js";
+import {fileReq, jsonReq, noArgReq, passFailReq, postReq, uploadReq} from "./netutils.js";
 
 const netUser = {
 
@@ -45,10 +45,17 @@ const netAuth = {
     verifyUid:noArgReq("/auth/verify_uid"),
 }
 
+const netOrg = {
+
+    // /is_admin/<org_id>
+    isAdmin:passFailReq("/org/is_admin")
+}
+
 const net = {
     user:netUser,
     proj:netProj,
     auth:netAuth,
+    org:netOrg,
 }
 
 export {net};

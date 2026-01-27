@@ -53,6 +53,12 @@ function jsonReq(uri){
     })
 }
 
+function passFailReq(uri){
+    return authReq(uri,"GET", async (response)=>{
+        return await response.ok();
+    })
+}
+
 function postReq(uri){
     return authReq(uri,"POST", async (response)=>{
         return await response;
@@ -123,4 +129,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq,postReq};
+export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq,postReq,passFailReq};

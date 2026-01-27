@@ -4,7 +4,7 @@ import AuthLock from "~components/AuthLock.jsx";
 
 function OrgAdmin(props) {
     return (
-        <AuthLock check={(auth)=>{
+        <AuthLock check={async (auth)=>{
 
         }}>
             <ScreenPage>

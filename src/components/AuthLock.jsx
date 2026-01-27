@@ -15,11 +15,13 @@ function AuthLock(props) {
     }
 
     if(props.check){
-        if(props.check(auth)&&auth.isAuthenticated){
-            return props.children;
-        }else{
-            return auth.signinRedirect();
-        }
+        props.check(auth).then((result)=>{
+            if(result&&auth.isAuthenticated){
+                return props.children;
+            }else{
+                return auth.signinRedirect();
+            }
+        })
     }
 
     if(auth.isAuthenticated) {
