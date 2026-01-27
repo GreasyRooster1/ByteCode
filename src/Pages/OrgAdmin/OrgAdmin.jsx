@@ -4,7 +4,9 @@ import AuthLock from "~components/AuthLock.jsx";
 
 function OrgAdmin(props) {
     return (
-        <AuthLock>
+        <AuthLock check={(auth)=>{
+
+        }}>
             <ScreenPage>
                 org admin
             </ScreenPage>

@@ -15,7 +15,7 @@ function AuthLock(props) {
     }
 
     if(props.check){
-        if(props.check()&&auth.isAuthenticated){
+        if(props.check(auth)&&auth.isAuthenticated){
             return props.children;
         }else{
             return auth.signinRedirect();
