@@ -4,6 +4,8 @@ import AuthLock from "~components/AuthLock.jsx";
 import ScreenPage from "~components/screenPage/ScreenPage.jsx";
 import {net} from "~api/net/net.js";
 import {Flex} from "@radix-ui/themes";
+import UserIcon from "../../icons/User.svg?react"
+
 
 import styles from "./orgAdmin.module.css";
 import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
@@ -20,7 +22,7 @@ function OrgAdmin(props) {
 
                 <Flex direction="row">
                     <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
-                        <NavSection>Users</NavSection>
+                        <NavSection icon={(<UserIcon />)}>Users</NavSection>
                     </Flex>
                     <Flex  className={styles.main}>
 

@@ -6,3 +6,15 @@
 .section:hover{
     background-color: var(--neutral-light);
 }
+
+.iconWrapper{
+    margin-right:12px;
+}
+
+.iconWrapper svg{
+    width:1em;
+    aspect-ratio: 1;
+    position: relative;
+    top:-.10em;
+    vertical-align: middle;
+}
