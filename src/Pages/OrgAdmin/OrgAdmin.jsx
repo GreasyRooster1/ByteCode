@@ -6,6 +6,7 @@ import {net} from "~api/net/net.js";
 import {Flex} from "@radix-ui/themes";
 
 import styles from "./orgAdmin.module.css";
+import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
 
 
 function OrgAdmin(props) {
@@ -18,8 +19,8 @@ function OrgAdmin(props) {
             <ScreenPage>
 
                 <Flex direction="row">
-                    <Flex p="4" height="100vh" className={styles.nav}>
-                        s
+                    <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
+                        <NavSection>Users</NavSection>
                     </Flex>
                     <Flex  className={styles.main}>
 

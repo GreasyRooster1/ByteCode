@@ -1,3 +1,8 @@
 .section{
-    border-bottom: 2px solid var(--neutral-light);
+    border-radius:5px;
+    transition:background .2s;
+}
+
+.section:hover{
+    background-color: var(--neutral-light);
 }
