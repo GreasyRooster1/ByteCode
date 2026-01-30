@@ -23,6 +23,9 @@ function OrgAdmin(props) {
                 <Flex direction="row">
                     <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
                         <NavSection icon={(<UserIcon />)}>Users</NavSection>
+                        <NavSection icon={(<UserIcon />)}>Classes</NavSection>
+                        <NavSection icon={(<UserIcon />)}>Users</NavSection>
+                        <NavSection icon={(<UserIcon />)}>Subscription</NavSection>
                     </Flex>
                     <Flex  className={styles.main}>
 
