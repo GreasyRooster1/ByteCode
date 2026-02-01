@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {Button} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
-import UiSwitch from "~components/UISwitch.jsx";
+import UIToggle from "~components/UIToggle.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -15,8 +15,8 @@ function LandingPage() {
         <AuthProvider>
             <Nav className={styles.nav}>
 
-                <UiSwitch value={auth.isAuthenticated}>
-                    <UiSwitch.True>
+                <UIToggle value={auth.isAuthenticated}>
+                    <UIToggle.True>
                         <Button onClick={() => {
                             auth.signoutRedirect().then(() => {
                                 console.log("logged out");
@@ -24,11 +24,11 @@ function LandingPage() {
                         }}>
                             Log Out
                         </Button>
-                    </UiSwitch.True>
-                    <UiSwitch.False>
+                    </UIToggle.True>
+                    <UIToggle.False>
                         <Button onClick={() => auth.signinRedirect()}>Sign up/Login</Button>
-                    </UiSwitch.False>
-                </UiSwitch>
+                    </UIToggle.False>
+                </UIToggle>
                 <Button onClick={() => navigate("/home")}>
                     Home
                 </Button>

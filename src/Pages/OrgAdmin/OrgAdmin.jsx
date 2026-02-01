@@ -30,7 +30,7 @@ function OrgAdmin(props) {
                         <NavSection icon={(<UserIcon />)} id={"classes"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Classes</NavSection>
                         <NavSection icon={(<UserIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
                     </Flex>
-                    <Flex  className={styles.main}>
+                    <Flex className={styles.main}>
 
                     </Flex>
                 </Flex>
