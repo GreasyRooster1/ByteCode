@@ -33,18 +33,23 @@ function OrgAdmin(props) {
                     </Flex>
                     <Flex className={styles.main}>
                         <UISwitch value={selectedTab}>
+
                             <UISwitch.Option id="info">
                                 info
                             </UISwitch.Option>
+
                             <UISwitch.Option id="users">
                                 users
                             </UISwitch.Option>
+
                             <UISwitch.Option id="classes">
                                 classes
                             </UISwitch.Option>
+
                             <UISwitch.Option id="subscription">
                                 subscription
                             </UISwitch.Option>
+
                         </UISwitch>
                     </Flex>
                 </Flex>
