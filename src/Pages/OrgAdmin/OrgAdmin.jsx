@@ -24,9 +24,9 @@ function OrgAdmin(props) {
             <ScreenPage>
 
                 <Flex direction="row">
-                    <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
+                    <Flex direction="column" akl width="10%" height="100vh" className={styles.nav}>
                         <NavSection icon={(<UserIcon />)} id={"info"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Info</NavSection>
-                        <Separator />
+                        <Flex align="center" justify="center" width="100%"><Separator size="4" my="2" mx="2" /></Flex>
                         <NavSection icon={(<UserIcon />)} id={"users"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Users</NavSection>
                         <NavSection icon={(<UserIcon />)} id={"classes"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Classes</NavSection>
                         <NavSection icon={(<UserIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
