@@ -9,6 +9,7 @@ import UserIcon from "../../icons/User.svg?react"
 
 import styles from "./orgAdmin.module.css";
 import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
+import UISwitch from "~components/UISwitch.jsx";
 
 
 function OrgAdmin(props) {
@@ -31,7 +32,20 @@ function OrgAdmin(props) {
                         <NavSection icon={(<UserIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
                     </Flex>
                     <Flex className={styles.main}>
-
+                        <UISwitch value={selectedTab}>
+                            <UISwitch.Option id="info">
+                                info
+                            </UISwitch.Option>
+                            <UISwitch.Option id="users">
+                                users
+                            </UISwitch.Option>
+                            <UISwitch.Option id="classes">
+                                classes
+                            </UISwitch.Option>
+                            <UISwitch.Option id="subscription">
+                                subscription
+                            </UISwitch.Option>
+                        </UISwitch>
                     </Flex>
                 </Flex>
 
