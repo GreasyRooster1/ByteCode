@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams} from "react-router-dom";
 import AuthLock from "~components/AuthLock.jsx";
 import ScreenPage from "~components/screenPage/ScreenPage.jsx";
 import {net} from "~api/net/net.js";
-import {Flex} from "@radix-ui/themes";
+import {Flex, Separator} from "@radix-ui/themes";
 import UserIcon from "../../icons/User.svg?react"
 
 
@@ -14,6 +14,8 @@ import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
 function OrgAdmin(props) {
     const params = useParams();
     const orgId = params.orgId;
+    const [selectedTab, setSelectedTab] = useState("info");
+
     return (
         <AuthLock check={async (auth)=>{
             return await net.org.isAdmin(auth.user?.access_token,[orgId],undefined)
@@ -22,10 +24,11 @@ function OrgAdmin(props) {
 
                 <Flex direction="row">
                     <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
-                        <NavSection icon={(<UserIcon />)}>Users</NavSection>
-                        <NavSection icon={(<UserIcon />)}>Classes</NavSection>
-                        <NavSection icon={(<UserIcon />)}>Users</NavSection>
-                        <NavSection icon={(<UserIcon />)}>Subscription</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"info"}>Info</NavSection>
+                        <Separator />
+                        <NavSection icon={(<UserIcon />)} id={"users"}>Users</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"classes"}>Classes</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"subscription"}>Subscription</NavSection>
                     </Flex>
                     <Flex  className={styles.main}>
 
