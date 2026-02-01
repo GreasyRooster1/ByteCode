@@ -10,6 +10,7 @@ import UserIcon from "../../icons/User.svg?react"
 import styles from "./orgAdmin.module.css";
 import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
 import UISwitch from "~components/UISwitch.jsx";
+import InfoSection from "~/Pages/OrgAdmin/InfoSection.jsx";
 
 
 function OrgAdmin(props) {
@@ -35,7 +36,7 @@ function OrgAdmin(props) {
                         <UISwitch value={selectedTab}>
 
                             <UISwitch.Option id="info">
-                                info
+                                <InfoSection />
                             </UISwitch.Option>
 
                             <UISwitch.Option id="users">
