@@ -24,11 +24,11 @@ function OrgAdmin(props) {
 
                 <Flex direction="row">
                     <Flex direction="column" width="10%" height="100vh" className={styles.nav}>
-                        <NavSection icon={(<UserIcon />)} id={"info"}>Info</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"info"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Info</NavSection>
                         <Separator />
-                        <NavSection icon={(<UserIcon />)} id={"users"}>Users</NavSection>
-                        <NavSection icon={(<UserIcon />)} id={"classes"}>Classes</NavSection>
-                        <NavSection icon={(<UserIcon />)} id={"subscription"}>Subscription</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"users"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Users</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"classes"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Classes</NavSection>
+                        <NavSection icon={(<UserIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
                     </Flex>
                     <Flex  className={styles.main}>
 
