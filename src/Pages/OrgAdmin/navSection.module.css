@@ -18,3 +18,7 @@
     top:-.10em;
     vertical-align: middle;
 }
+
+.selected{
+    background-color: var(--neutral-light);
+}
