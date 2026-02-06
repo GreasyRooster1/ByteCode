@@ -36,7 +36,7 @@ function OrgAdmin(props) {
                         <UISwitch value={selectedTab}>
 
                             <UISwitch.Option id="info">
-                                <InfoSection />
+                                <InfoSection orgId={orgId}/>
                             </UISwitch.Option>
 
                             <UISwitch.Option id="users">
