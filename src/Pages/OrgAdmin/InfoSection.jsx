@@ -9,13 +9,13 @@ function InfoSection(props) {
         <Flex width="100%" height="100%" p="4" align="center" justify="center">
             <Card>
                 <Flex p="3" direction="column" justify="between" align="center">
-                    <Text size="8" mb="4">Org Name</Text>
                     <Container my="4">
-                        <img alt="org logo image" src={API_URL+"/org/logo_redirect/"+props.orgId}/>
+                        <img style={{aspectRatio:1,height:"40vh"}} alt="org logo image" src={API_URL+"/org/logo_redirect/"+props.orgId}/>
                     </Container>
+                    <Text size="9" mb="7">Org Name</Text>
                     <Grid columns="2" gap="2">
-                        <Text color="gray" width="50%" align="center"><UserIcon/> 1038 Users</Text>
-                        <Text color="gray" width="50%" align="center"><AwardIcon/> Pro</Text>
+                        <Text color="gray" width="50%" align="center" size="4"><UserIcon/> 1038 Users</Text>
+                        <Text color="gray" width="50%" align="center" size="4"><AwardIcon/> Pro</Text>
                     </Grid>
                 </Flex>
             </Card>
