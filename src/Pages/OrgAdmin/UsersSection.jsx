@@ -7,9 +7,9 @@ function UsersSection(props) {
             <Table.Root>
                 <Table.Header>
                     <Table.Row>
-                        <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
                         <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-                        <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
                     </Table.Row>
                 </Table.Header>
 
