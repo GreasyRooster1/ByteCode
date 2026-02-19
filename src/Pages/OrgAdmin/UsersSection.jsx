@@ -9,12 +9,13 @@ function UsersSection(props) {
 
     const [requestState,setRequestState] = useReqState(true);
     const [users, setUsers] = useState([]);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
-        net.proj.getUserProjDataList(auth.user?.access_token, [1] ,setRequestState).then(response => {
+        net.org.adminGetUsersDisplay(auth.user?.access_token, [props.orgId,page] ,setRequestState).then(response => {
             setUsers(response??[])
         })
-    }, []);
+    }, [page]);
 
     return (
         <Flex width="100%" height="100%" p="4" align="center" justify="center">
