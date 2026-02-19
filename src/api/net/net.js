@@ -48,7 +48,10 @@ const netAuth = {
 const netOrg = {
 
     // /is_admin/<org_id>
-    isAdmin:passFailReq("/org/is_admin")
+    isAdmin:passFailReq("/org/is_admin"),
+
+    // /admin_get_users_display/<org_id>/<page>
+    adminGetUsersDisplay:jsonReq("/org/admin_get_users_display")
 }
 
 const net = {
