@@ -4,7 +4,7 @@
 }
 
 .section:hover{
-    background-color: var(--neutral-light);
+    background-color: var(--neutral-med);
 }
 
 .iconWrapper{
@@ -20,5 +20,5 @@
 }
 
 .selected{
-    background-color: var(--neutral-light);
+    background-color: var(--neutral-med);
 }

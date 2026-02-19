@@ -1,8 +1,9 @@
 .nav{
     background-color: var(--neutral-dark);
+    border-right: 1px solid var(--neutral-light);
 }
 
 .main{
-    background-color: var(--neutral-med);
+    background-color: var(--neutral-dark);
     flex:1;
 }
