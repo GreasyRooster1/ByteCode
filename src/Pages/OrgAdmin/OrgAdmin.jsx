@@ -25,7 +25,7 @@ function OrgAdmin(props) {
             <ScreenPage>
 
                 <Flex direction="row">
-                    <Flex direction="column" akl width="10%" height="100vh" className={styles.nav}>
+                    <Flex direction="column" width={{md:"20%",lg:"15%",xl:"10%"}} height="100vh" className={styles.nav}>
                         <Flex align="center" justify="start" p="3">
                             <img src="/logo.svg" alt="logo" width="48px"/>
                             <Flex direction="column" ml="3">
