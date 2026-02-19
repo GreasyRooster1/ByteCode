@@ -4,8 +4,10 @@ import AuthLock from "~components/AuthLock.jsx";
 import ScreenPage from "~components/screenPage/ScreenPage.jsx";
 import {net} from "~api/net/net.js";
 import {Flex, Separator, Text} from "@radix-ui/themes";
-import UserIcon from "../../icons/User.svg?react"
-import BookOpenIcon from "../../icons/BookOpen.svg?react"
+import UserIcon from "~icons/User.svg?react"
+import BookOpenIcon from "~icons/BookOpen.svg?react"
+import AwardIcon from "~icons/Award.svg?react";
+import HomeIcon from "~icons/HomeAdmin.svg?react";
 
 
 import styles from "./orgAdmin.module.css";
@@ -35,10 +37,10 @@ function OrgAdmin(props) {
                             </Flex>
                         </Flex>
                         <Flex align="center" justify="center" width="100%"><Separator size="4" my="2" mx="2" /></Flex>
-                        <NavSection icon={(<UserIcon />)} id={"info"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Info</NavSection>
+                        <NavSection icon={(<HomeIcon />)} id={"info"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Info</NavSection>
                         <NavSection icon={(<UserIcon />)} id={"users"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Users</NavSection>
                         <NavSection icon={(<BookOpenIcon />)} id={"classes"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Classes</NavSection>
-                        <NavSection icon={(<UserIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
+                        <NavSection icon={(<AwardIcon />)} id={"subscription"} selectedTab={selectedTab} setSelectedTab={setSelectedTab}>Subscription</NavSection>
                     </Flex>
                     <Flex className={styles.main}>
                         <UISwitch value={selectedTab}>
