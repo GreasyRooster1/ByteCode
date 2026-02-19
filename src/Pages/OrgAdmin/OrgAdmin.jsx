@@ -14,6 +14,7 @@ import styles from "./orgAdmin.module.css";
 import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
 import UISwitch from "~components/UISwitch.jsx";
 import InfoSection from "~/Pages/OrgAdmin/InfoSection.jsx";
+import UsersSection from "~/Pages/OrgAdmin/UsersSection.jsx";
 
 
 function OrgAdmin(props) {
@@ -50,7 +51,7 @@ function OrgAdmin(props) {
                             </UISwitch.Option>
 
                             <UISwitch.Option id="users">
-                                users
+                                <UsersSection orgId={orgId}/>
                             </UISwitch.Option>
 
                             <UISwitch.Option id="classes">
