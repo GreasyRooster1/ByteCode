@@ -21,9 +21,9 @@ function UsersSection(props) {
     }, [page]);
 
     return (
-        <Flex width="100%" height="100%" p="4" align="center" justify="center">
+        <Flex width="100%" height="100%" p="4" justify="center">
             <Pending requestState={requestState}>
-                <Table.Root variant="surface" size="2">
+                <Table.Root variant="surface" size="2" >
                     <Table.Header>
                         <Table.Row>
                             <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
