@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Flex, Table, Text} from "@radix-ui/themes";
+import {Badge, Flex, IconButton, Table, Text} from "@radix-ui/themes";
 import {useAuth} from "react-oidc-context";
 import {net} from "~api/net/net.js";
 import {useReqState} from "~api/net/netutils.js";
 import UIToggle from "~components/UIToggle.jsx";
 import Pending from "~components/Pending.jsx";
+import {MagnifyingGlassIcon} from "@radix-ui/react-icons";
 
 function UsersSection(props) {
     let auth = useAuth();
@@ -29,6 +30,7 @@ function UsersSection(props) {
                             <Table.ColumnHeaderCell>Display Name</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
+                            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -42,6 +44,11 @@ function UsersSection(props) {
                                         <Table.Cell>{user.display_name}</Table.Cell>
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
+                                        <Table.Cell>
+                                            <IconButton variant="ghost" color="gray">
+                                                <MagnifyingGlassIcon width="18" height="18" />
+                                            </IconButton>
+                                        </Table.Cell>
                                     </Table.Row>
                                 )
                             }
