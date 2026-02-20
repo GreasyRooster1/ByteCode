@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Flex, IconButton, Table, Text} from "@radix-ui/themes";
+import {Badge, Flex, Table, Text} from "@radix-ui/themes";
 import {useAuth} from "react-oidc-context";
 import {net} from "~api/net/net.js";
 import {useReqState} from "~api/net/netutils.js";
 import UIToggle from "~components/UIToggle.jsx";
 import Pending from "~components/Pending.jsx";
-import {MagnifyingGlassIcon} from "@radix-ui/react-icons";
+import UserActionButton from "~/Pages/OrgAdmin/UserActionButton.jsx";
 
 function UsersSection(props) {
     let auth = useAuth();
@@ -45,9 +45,7 @@ function UsersSection(props) {
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
                                         <Table.Cell>
-                                            <IconButton variant="ghost" color="gray">
-                                                <MagnifyingGlassIcon width="18" height="18" />
-                                            </IconButton>
+                                            <UserActionButton />
                                         </Table.Cell>
                                     </Table.Row>
                                 )
