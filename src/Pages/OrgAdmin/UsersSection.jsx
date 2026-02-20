@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Badge, Flex, Table} from "@radix-ui/themes";
+import {Badge, Flex, Table, Text} from "@radix-ui/themes";
 import {useAuth} from "react-oidc-context";
 import {net} from "~api/net/net.js";
 import {useReqState} from "~api/net/netutils.js";
@@ -22,10 +22,11 @@ function UsersSection(props) {
     return (
         <Flex width="100%" height="100%" p="4" align="center" justify="center">
             <Pending requestState={requestState}>
-                <Table.Root variant="surface">
+                <Table.Root variant="surface" size="2">
                     <Table.Header>
                         <Table.Row>
                             <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
+                            <Table.ColumnHeaderCell>Display Name</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
                         </Table.Row>
@@ -38,6 +39,7 @@ function UsersSection(props) {
                                 users.map(user =>
                                     <Table.Row>
                                         <Table.RowHeaderCell>{user.username}</Table.RowHeaderCell>
+                                        <Table.Cell>{user.display_name}</Table.Cell>
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
                                     </Table.Row>
