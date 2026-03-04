@@ -17,15 +17,14 @@ function UserActionButton(props) {
                 <DropdownMenu.Item>Duplicate</DropdownMenu.Item>
                 <DropdownMenu.Separator />
                 <DropdownMenu.Item>Change Classes</DropdownMenu.Item>
-                <UIToggle value={true}>
+                <UIToggle value={props.user.role==="Student"} >
                     <UIToggle.True>
-                        <DropdownMenu.Item>Promote to Teacher</DropdownMenu.Item>
+                        <DropdownMenu.Item color="red">Promote to Teacher</DropdownMenu.Item>
                     </UIToggle.True>
                     <UIToggle.False>
-                        <DropdownMenu.Item>Make Student</DropdownMenu.Item>
+                        <DropdownMenu.Item color="red">Make Student</DropdownMenu.Item>
                     </UIToggle.False>
                 </UIToggle>
-                <DropdownMenu.Separator />
                 <DropdownMenu.Item color="red">
                     Kick
                 </DropdownMenu.Item>

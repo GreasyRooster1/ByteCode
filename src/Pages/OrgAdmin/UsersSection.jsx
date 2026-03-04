@@ -45,7 +45,7 @@ function UsersSection(props) {
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
                                         <Table.Cell>
-                                            <UserActionButton />
+                                            <UserActionButton user={user}/>
                                         </Table.Cell>
                                     </Table.Row>
                                 )
