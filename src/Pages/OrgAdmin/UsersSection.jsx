@@ -13,12 +13,15 @@ function UsersSection(props) {
     const [requestState,setRequestState] = useReqState(true);
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(1);
+    const [trigger, setTrigger] = useState(1);
 
     useEffect(() => {
         net.org.adminGetUsersDisplay(auth.user?.access_token, [props.orgId,page] ,setRequestState).then(response => {
             setUsers(response??[])
         })
-    }, [page]);
+    }, [page,trigger]);
+
+    const triggerReload = ()=>{setTrigger(p=>p+1);}
 
     return (
         <Flex width="100%" height="100%" p="4" justify="center">
@@ -45,7 +48,7 @@ function UsersSection(props) {
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
                                         <Table.Cell>
-                                            <UserActionButton user={user}/>
+                                            <UserActionButton user={user} orgId={props.orgId} triggerReload={triggerReload}/>
                                         </Table.Cell>
                                     </Table.Row>
                                 )
