@@ -2,8 +2,14 @@ import React from 'react';
 import {DropdownMenu, IconButton} from "@radix-ui/themes";
 import {DotsVerticalIcon} from "@radix-ui/react-icons";
 import UIToggle from "~components/UIToggle.jsx";
+import {useAuth} from "react-oidc-context";
+import {useReqState} from "~api/net/netutils.js";
 
 function UserActionButton(props) {
+    let auth = useAuth();
+
+    const [requestState,setRequestState] = useReqState(true);
+
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger>

@@ -51,7 +51,10 @@ const netOrg = {
     isAdmin:passFailReq("/org/is_admin"),
 
     // /admin_get_users_display/<org_id>/<page>
-    adminGetUsersDisplay:jsonReq("/org/admin_get_users_display")
+    adminGetUsersDisplay:jsonReq("/org/admin_get_users_display"),
+
+    // //admin_change_user_role/<org_id>/<user_id>/<new_role>
+    adminChangeUserRole:postReq("/org/admin_change_user_role"),
 }
 
 const net = {
