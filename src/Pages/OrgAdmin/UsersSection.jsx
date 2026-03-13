@@ -14,10 +14,17 @@ function UsersSection(props) {
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(1);
     const [trigger, setTrigger] = useState(1);
+    const [loadingUsers, setLoadingUsers] = useState([]);
 
     useEffect(() => {
+        setRequestState({
+            isLoading: true,
+            isError: false,
+            error: null,
+        })
         net.org.adminGetUsersDisplay(auth.user?.access_token, [props.orgId,page] ,setRequestState).then(response => {
             setUsers(response??[])
+            setLoadingUsers([]);
         })
     }, [page,trigger]);
 
@@ -25,42 +32,46 @@ function UsersSection(props) {
 
     return (
         <Flex width="100%" height="100%" p="4" justify="center">
-            <Pending requestState={requestState}>
-                <Table.Root variant="surface" size="2" >
-                    <Table.Header>
-                        <Table.Row>
-                            <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
-                            <Table.ColumnHeaderCell>Display Name</Table.ColumnHeaderCell>
-                            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-                            <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
-                            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-                        </Table.Row>
-                    </Table.Header>
+            <Table.Root width="100%" variant="surface" size="2" >
+                <Table.Header>
+                    <Table.Row>
+                        <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell>Display Name</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
+                        <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
+                    </Table.Row>
+                </Table.Header>
 
                     <Table.Body>
-                        <UIToggle value={users.length>0}>
-                            <UIToggle.True>
-                            {
-                                users.map(user =>
-                                    <Table.Row>
-                                        <Table.RowHeaderCell>{user.username}</Table.RowHeaderCell>
-                                        <Table.Cell>{user.display_name}</Table.Cell>
-                                        <Table.Cell>{user.email}</Table.Cell>
-                                        <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
-                                        <Table.Cell>
-                                            <UserActionButton user={user} orgId={props.orgId} triggerReload={triggerReload}/>
-                                        </Table.Cell>
-                                    </Table.Row>
-                                )
-                            }
-                            </UIToggle.True>
-                            <UIToggle.False>
-                                <Text>Your organization has no users yet!</Text>
-                            </UIToggle.False>
-                        </UIToggle>
+                            <UIToggle value={users.length>0}>
+                                <UIToggle.True>
+
+                                {
+                                    users.map(user =>
+                                        <Pending isLoading={loadingUsers.includes(user.user_id)}>
+                                            <Table.Row>
+                                                <Table.RowHeaderCell>{user.username}</Table.RowHeaderCell>
+                                                <Table.Cell>{user.display_name}</Table.Cell>
+                                                <Table.Cell>{user.email}</Table.Cell>
+                                                <Table.Cell><Badge color={user.role==="Teacher"?"green":"gray"}>{user.role}</Badge></Table.Cell>
+                                                <Table.Cell>
+                                                    <UserActionButton user={user} orgId={props.orgId} triggerReload={triggerReload} setLoadingUsers={setLoadingUsers}/>
+                                                </Table.Cell>
+                                            </Table.Row>
+                                        </Pending>
+                                    )
+                                }
+
+                                </UIToggle.True>
+                                <UIToggle.False>
+                                    <Text>Your organization has no users yet!</Text>
+                                </UIToggle.False>
+                            </UIToggle>
                     </Table.Body>
-                </Table.Root>
-            </Pending>
+
+            </Table.Root>
+
         </Flex>
     );
 }

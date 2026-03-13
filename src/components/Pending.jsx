@@ -5,10 +5,16 @@ import Loading from "./Loading.jsx";
 import Error from "./Error.jsx";
 
 function Pending(props) {
+    if(!props.requestState){
+        if(props.isLoading) {
+            return <Loading />;
+        }
+        return props.children;
+    }
     if(props.requestState.isError) {
         return <Error message={props.showError?props.requestState.error:undefined} />;
     }
-    if(props.requestState.isLoading) {
+    if(props.requestState.isLoading||props.isLoading) {
         return <Loading />;
     }
 

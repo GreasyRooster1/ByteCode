@@ -14,6 +14,7 @@ function UserActionButton(props) {
 
     const setRole = (role) => {
         setIsSent(true);
+        props.setLoadingUsers(a => a.push(props.user.user_id));
         net.org.adminChangeUserRole(auth.user?.access_token, [props.orgId, props.user.user_id, role], setRequestState).then( r =>{
             setIsSent(false);
             props.triggerReload();
@@ -33,7 +34,7 @@ function UserActionButton(props) {
                 <DropdownMenu.Item>Duplicate</DropdownMenu.Item>
                 <DropdownMenu.Separator />
                 <DropdownMenu.Item>Change Classes</DropdownMenu.Item>
-                <UIToggle>
+                <UIToggle value={isSent}>
                     <UIToggle.True>
                         <Spinner />
                     </UIToggle.True>
