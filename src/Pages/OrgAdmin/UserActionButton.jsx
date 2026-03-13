@@ -5,6 +5,7 @@ import UIToggle from "~components/UIToggle.jsx";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "~api/net/netutils.js";
 import {net} from "~api/net/net.js";
+import KickConfirm from "~/Pages/OrgAdmin/KickConfirm.jsx";
 
 function UserActionButton(props) {
     let auth = useAuth();
@@ -52,9 +53,11 @@ function UserActionButton(props) {
                         </UIToggle>
                     </UIToggle.False>
                 </UIToggle>
-                <DropdownMenu.Item color="red">
-                    Kick
-                </DropdownMenu.Item>
+                <KickConfirm>
+                    <DropdownMenu.Item color="red" onClick={(e)=>{e.preventDefault();confirm()}}>
+                        Kick
+                    </DropdownMenu.Item>
+                </KickConfirm>
             </DropdownMenu.Content>
 
         </DropdownMenu.Root>
