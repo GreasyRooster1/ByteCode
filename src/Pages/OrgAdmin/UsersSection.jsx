@@ -49,8 +49,8 @@ function UsersSection(props) {
 
                                 {
                                     users.map(user =>
-                                        <Pending isLoading={loadingUsers.includes(user.user_id)}>
-                                            <Table.Row>
+                                        // <Pending isLoading={loadingUsers.includes(user.user_id)}>
+                                            <Table.Row style={{color: loadingUsers.includes(user.user_id)?"var(--gray-8)":"var(--gray-12)"}}>
                                                 <Table.RowHeaderCell>{user.username}</Table.RowHeaderCell>
                                                 <Table.Cell>{user.display_name}</Table.Cell>
                                                 <Table.Cell>{user.email}</Table.Cell>
@@ -59,7 +59,7 @@ function UsersSection(props) {
                                                     <UserActionButton user={user} orgId={props.orgId} triggerReload={triggerReload} setLoadingUsers={setLoadingUsers}/>
                                                 </Table.Cell>
                                             </Table.Row>
-                                        </Pending>
+                                        // </Pending>
                                     )
                                 }
 

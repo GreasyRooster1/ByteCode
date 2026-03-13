@@ -14,7 +14,10 @@ function UserActionButton(props) {
 
     const setRole = (role) => {
         setIsSent(true);
-        props.setLoadingUsers(a => a.push(props.user.user_id));
+        props.setLoadingUsers(a => {
+            a.push(props.user.user_id);
+            return a
+        });
         net.org.adminChangeUserRole(auth.user?.access_token, [props.orgId, props.user.user_id, role], setRequestState).then( r =>{
             setIsSent(false);
             props.triggerReload();
