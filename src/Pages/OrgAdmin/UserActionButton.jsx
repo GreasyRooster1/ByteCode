@@ -25,6 +25,18 @@ function UserActionButton(props) {
         })
     }
 
+    const kick = () => {
+        setIsSent(true);
+        props.setLoadingUsers(a => {
+            a.push(props.user.user_id);
+            return a
+        });
+        net.org.adminKickUser(auth.user?.access_token, [props.orgId, props.user.user_id], setRequestState).then( r =>{
+            setIsSent(false);
+            props.triggerReload();
+        })
+    }
+
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger>
@@ -53,11 +65,14 @@ function UserActionButton(props) {
                         </UIToggle>
                     </UIToggle.False>
                 </UIToggle>
-                <KickConfirm>
-                    <DropdownMenu.Item color="red" onClick={(e)=>{e.preventDefault();confirm()}}>
-                        Kick
-                    </DropdownMenu.Item>
-                </KickConfirm>
+                <DropdownMenu.Item color="red" onClick={(e)=>{
+                    //e.preventDefault();
+                    if(confirm("Are you sure you want to kick this user?")) {
+                        kick();
+                    }
+                }}>
+                    Kick
+                </DropdownMenu.Item>
             </DropdownMenu.Content>
 
         </DropdownMenu.Root>
