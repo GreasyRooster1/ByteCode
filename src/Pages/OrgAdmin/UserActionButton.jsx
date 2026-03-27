@@ -26,13 +26,11 @@ function UserActionButton(props) {
     }
 
     const kick = () => {
-        setIsSent(true);
         props.setLoadingUsers(a => {
             a.push(props.user.user_id);
             return a
         });
         net.org.adminKickUser(auth.user?.access_token, [props.orgId, props.user.user_id], setRequestState).then( r =>{
-            setIsSent(false);
             props.triggerReload();
         })
     }
