@@ -65,6 +65,12 @@ function postReq(uri){
     })
 }
 
+function deleteReq(uri){
+    return authReq(uri,"DELETE", async (response)=>{
+        return await response;
+    })
+}
+
 function fileReq(uri){
     return authReq(uri,"GET", async (response)=>{
         return response.blob();
@@ -129,4 +135,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq,postReq,passFailReq};
+export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq,postReq,passFailReq,deleteReq};

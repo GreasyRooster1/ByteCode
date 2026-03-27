@@ -1,4 +1,4 @@
-import {fileReq, jsonReq, noArgReq, passFailReq, postReq, uploadReq} from "./netutils.js";
+import {deleteReq, fileReq, jsonReq, noArgReq, passFailReq, postReq, uploadReq} from "./netutils.js";
 
 const netUser = {
 
@@ -55,6 +55,8 @@ const netOrg = {
 
     // //admin_change_user_role/<org_id>/<user_id>/<new_role>
     adminChangeUserRole:postReq("/org/admin_change_user_role"),
+
+    adminKickUser:deleteReq("/org/admin_kick_user"),
 }
 
 const net = {
