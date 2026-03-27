@@ -67,9 +67,12 @@ function UserActionButton(props) {
                 </UIToggle>
                 <DropdownMenu.Item color="red" onClick={(e)=>{
                     //e.preventDefault();
-                    if(confirm("Are you sure you want to kick this user?")) {
-                        kick();
-                    }
+                    new Promise(resolve => {
+                        if(confirm("Are you sure you want to kick this user?")) {
+                            kick();
+                        }
+                        resolve();
+                    });
                 }}>
                     Kick
                 </DropdownMenu.Item>
