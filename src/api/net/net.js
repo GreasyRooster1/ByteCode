@@ -56,6 +56,7 @@ const netOrg = {
     // //admin_change_user_role/<org_id>/<user_id>/<new_role>
     adminChangeUserRole:postReq("/org/admin_change_user_role"),
 
+    // /admin_kick_user/<org_id>/<user_id>
     adminKickUser:deleteReq("/org/admin_kick_user"),
 }
 
