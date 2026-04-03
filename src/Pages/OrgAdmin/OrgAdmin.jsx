@@ -15,6 +15,7 @@ import NavSection from "~/Pages/OrgAdmin/NavSection.jsx";
 import UISwitch from "~components/UISwitch.jsx";
 import InfoSection from "~/Pages/OrgAdmin/InfoSection.jsx";
 import UsersSection from "~/Pages/OrgAdmin/UsersSection.jsx";
+import ClassSection from "~/Pages/OrgAdmin/ClassSection.jsx";
 
 
 function OrgAdmin(props) {
@@ -55,7 +56,7 @@ function OrgAdmin(props) {
                             </UISwitch.Option>
 
                             <UISwitch.Option id="classes">
-                                classes
+                                <ClassSection orgId={orgId}/>
                             </UISwitch.Option>
 
                             <UISwitch.Option id="subscription">
