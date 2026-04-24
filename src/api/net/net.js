@@ -58,6 +58,9 @@ const netOrg = {
 
     // /admin_kick_user/<org_id>/<user_id>
     adminKickUser:deleteReq("/org/admin_kick_user"),
+
+    // /admin_get_classes/<org_id>
+    adminGetClasses:jsonReq("/org/admin_get_classes"),
 }
 
 const net = {

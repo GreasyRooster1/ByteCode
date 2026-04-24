@@ -1,0 +1,69 @@
+import React, {useEffect, useState} from 'react';
+import {Separator} from "@radix-ui/themes/dist/esm/index.d.ts";
+import {Box, Flex, IconButton,Select,TextField,Button} from "@radix-ui/themes";
+import {PlusIcon} from "@radix-ui/react-icons";
+import {net as auth, net} from "~api/net/net.js";
+import {useReqState} from "~api/net/netutils.js";
+import Pending from "~components/Pending.jsx";
+
+function ClassBar(props) {
+    const [classes, setClasses] = useState([]);
+    const [reqState, setReqState] = useReqState();
+
+    useEffect(() => {
+        net.org.adminGetClasses(auth.user?.access_token,[props.orgId],setReqState).then(r => {
+            console.log(r);
+            if("status" in r && r["status"]!==200){
+                return;
+            }
+            setClasses(r??[]);
+        })
+    },[])
+
+    return (
+        <Flex width="100%" justify="space-between" direction="row" align="center">
+            <Box m="1">
+                <IconButton variant="outline" m="1">
+                    <PlusIcon width="18" height="18" />
+                </IconButton>
+
+                <Select.Root>
+                    <Select.Trigger m="1" placeholder="Select a class"/>
+                    <Select.Content>
+                        <Select.Group>
+                            <Select.Label>Select a Class</Select.Label>
+                            {classes.map((classData, idx) => (
+                                <Select.Item key={idx} value={classData.id}>{classData.name}</Select.Item>
+                            ))}
+                        </Select.Group>
+                    </Select.Content>
+                </Select.Root>
+            </Box>
+            <Separator orientation="vertical" size="4"/>
+            <Flex m="2" direction="row" flexGrow="1" align="center">
+                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}}></TextField.Root>
+
+                {/*<Text ml="6">Teacher: </Text>*/}
+                <Select.Root defaultValue="apple">
+                    <Select.Trigger m="1" size="2"/>
+                    <Select.Content>
+                        <Select.Group>
+                            <Select.Label>Fruits</Select.Label>
+                            <Select.Item value="orange">Orange</Select.Item>
+                            <Select.Item value="apple">M</Select.Item>
+                            <Select.Item value="grape" disabled>
+                                Grape
+                            </Select.Item>
+                            <Select.Item value="carrot">Carrot</Select.Item>
+                            <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                    </Select.Content>
+                </Select.Root>
+
+                <Button ml="6" color="red">Delete</Button>
+            </Flex>
+        </Flex>
+    );
+}
+
+export default ClassBar;

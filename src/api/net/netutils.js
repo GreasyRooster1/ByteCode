@@ -49,6 +49,9 @@ function authReq(uri, method, func){
 
 function jsonReq(uri){
     return authReq(uri,"GET", async (response)=>{
+        if(!response.ok){
+
+        }
         return await response.json();
     })
 }
