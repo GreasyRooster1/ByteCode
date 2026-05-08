@@ -17,6 +17,7 @@ function ClassBar(props) {
     const [hasEditedClass, setHasEditedClass] = useState(false);
 
     const [teachers, setTeachers] = useState([]);
+    const [currentTeacher, setCurrentTeacher] = useState(null);
 
     const [reqState, setReqState] = useReqState();
 
@@ -45,6 +46,7 @@ function ClassBar(props) {
 
     useEffect(() => {
         setCurrentClassName(classes[currentClass]?.name);
+        setCurrentTeacher(classes[currentClass]?.teacher);
         setHasEditedClass(false);
     },[currentClass])
 
@@ -83,7 +85,7 @@ function ClassBar(props) {
                 ></TextField.Root>
 
                 {/*<Text ml="6">Teacher: </Text>*/}
-                <Select.Root>
+                <Select.Root disabled={!currentClass} value={currentTeacher??""} onValueChange={setCurrentTeacher}>
                     <Select.Trigger m="1" size="2" placeholder="Teacher"/>
                     <Select.Content>
                         <Select.Group>
