@@ -14,6 +14,7 @@ function ClassBar(props) {
     const [classes, setClasses] = useState([]);
     const [currentClass, setCurrentClass] = useState(null);
     const [currentClassName, setCurrentClassName] = useState(null);
+    const [hasEditedClass, setHasEditedClass] = useState(false);
     const [reqState, setReqState] = useReqState();
 
     useEffect(() => {
@@ -32,7 +33,12 @@ function ClassBar(props) {
 
     useEffect(() => {
         setCurrentClassName(classes[currentClass]?.name);
+        setHasEditedClass(false);
     },[currentClass])
+
+    useEffect(() => {
+        setHasEditedClass(true);
+    },[currentClassName])
 
     return (
         <Flex width="100%" justify="space-between" direction="row" align="center">
@@ -41,7 +47,7 @@ function ClassBar(props) {
                     <PlusIcon width="18" height="18" />
                 </IconButton>
 
-                <Select.Root value={currentClass} onValueChange={setCurrentClass}>
+                <Select.Root value={currentClass??""} onValueChange={setCurrentClass}>
                     <Select.Trigger m="1" placeholder="Select a class"/>
                     <Select.Content>
                         <Select.Group>
@@ -73,7 +79,7 @@ function ClassBar(props) {
                         </Select.Group>
                     </Select.Content>
                 </Select.Root>
-
+                <Button ml="6" color="green" disabled={!hasEditedClass}>Save</Button>
                 <Button ml="6" color="red">Delete</Button>
             </Flex>
         </Flex>
