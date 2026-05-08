@@ -13,6 +13,7 @@ function ClassBar(props) {
     const [classList, setClassList] = useState([]);
     const [classes, setClasses] = useState([]);
     const [currentClass, setCurrentClass] = useState(null);
+    const [currentClassName, setCurrentClassName] = useState(null);
     const [reqState, setReqState] = useReqState();
 
     useEffect(() => {
@@ -29,7 +30,9 @@ function ClassBar(props) {
         })
     },[])
 
-    useEffect(() => {})
+    useEffect(() => {
+        setCurrentClassName(classes[currentClass]?.name);
+    },[currentClass])
 
     return (
         <Flex width="100%" justify="space-between" direction="row" align="center">
@@ -52,7 +55,7 @@ function ClassBar(props) {
             </Box>
             <Separator orientation="vertical" size="4"/>
             <Flex m="2" direction="row" flexGrow="1" align="center">
-                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}}>{classes[currentClass].name}</TextField.Root>
+                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}} value={currentClassName} onValueChange={setCurrentClassName}></TextField.Root>
 
                 {/*<Text ml="6">Teacher: </Text>*/}
                 <Select.Root defaultValue="apple">
