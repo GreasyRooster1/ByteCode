@@ -15,7 +15,7 @@ function ClassSection(props) {
 
     return (
         <Flex width="100%" height="100%" p="4" align="center" justify="center" direction="column">
-            <ClassBar selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
+            <ClassBar selectedClass={selectedClass} setSelectedClass={setSelectedClass} orgId={props.orgId} />
             <Separator size="4" m="2"/>
             <Flex width="100%" flexGrow="1" justify="space-between" direction="column">
                 {/*<Table.Root width="100%" variant="surface" size="2" >*/}

@@ -27,7 +27,7 @@ function authReq(uri, method, func){
                     isError:true,
                     error:response.message,
                 });
-                return response;
+                return;
             }else{
                 setReqState({
                     isLoading:false,
@@ -49,9 +49,6 @@ function authReq(uri, method, func){
 
 function jsonReq(uri){
     return authReq(uri,"GET", async (response)=>{
-        if(!response.ok){
-
-        }
         return await response.json();
     })
 }

@@ -5,20 +5,31 @@ import {PlusIcon} from "@radix-ui/react-icons";
 import {net as auth, net} from "~api/net/net.js";
 import {useReqState} from "~api/net/netutils.js";
 import Pending from "~components/Pending.jsx";
+import {useAuth} from "react-oidc-context";
+import c from "react-syntax-highlighter/src/languages/hljs/c.js";
 
 function ClassBar(props) {
+    let auth = useAuth();
+    const [classList, setClassList] = useState([]);
     const [classes, setClasses] = useState([]);
+    const [currentClass, setCurrentClass] = useState(null);
     const [reqState, setReqState] = useReqState();
 
     useEffect(() => {
-        net.org.adminGetClasses(auth.user?.access_token,[props.orgId],setReqState).then(r => {
-            console.log(r);
-            if("status" in r && r["status"]!==200){
+        net.org.adminGetClasses(auth.user?.access_token,[props.orgId],setReqState).then(response => {
+            if(!response){
                 return;
             }
-            setClasses(r??[]);
+            setClassList(response);
+            let tmpClasses = []
+            for(let c of response){
+                tmpClasses[c.id] = c;
+            }
+            setClasses(tmpClasses);
         })
     },[])
+
+    useEffect(() => {})
 
     return (
         <Flex width="100%" justify="space-between" direction="row" align="center">
@@ -27,12 +38,12 @@ function ClassBar(props) {
                     <PlusIcon width="18" height="18" />
                 </IconButton>
 
-                <Select.Root>
+                <Select.Root value={currentClass} onValueChange={setCurrentClass}>
                     <Select.Trigger m="1" placeholder="Select a class"/>
                     <Select.Content>
                         <Select.Group>
                             <Select.Label>Select a Class</Select.Label>
-                            {classes.map((classData, idx) => (
+                            {classList.map((classData, idx) => (
                                 <Select.Item key={idx} value={classData.id}>{classData.name}</Select.Item>
                             ))}
                         </Select.Group>
@@ -41,7 +52,7 @@ function ClassBar(props) {
             </Box>
             <Separator orientation="vertical" size="4"/>
             <Flex m="2" direction="row" flexGrow="1" align="center">
-                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}}></TextField.Root>
+                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}}>{classes[currentClass].name}</TextField.Root>
 
                 {/*<Text ml="6">Teacher: </Text>*/}
                 <Select.Root defaultValue="apple">
