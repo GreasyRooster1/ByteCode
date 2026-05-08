@@ -61,6 +61,9 @@ const netOrg = {
 
     // /admin_get_classes/<org_id>
     adminGetClasses:jsonReq("/org/admin_get_classes"),
+
+    // /admin_get_teachers/<org_id>
+    adminGetTeachers:jsonReq("/org/admin_get_teachers"),
 }
 
 const net = {

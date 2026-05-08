@@ -15,6 +15,9 @@ function ClassBar(props) {
     const [currentClass, setCurrentClass] = useState(null);
     const [currentClassName, setCurrentClassName] = useState(null);
     const [hasEditedClass, setHasEditedClass] = useState(false);
+
+    const [teachers, setTeachers] = useState([]);
+
     const [reqState, setReqState] = useReqState();
 
     useEffect(() => {
@@ -28,6 +31,15 @@ function ClassBar(props) {
                 tmpClasses[c.id] = c;
             }
             setClasses(tmpClasses);
+        })
+    },[])
+
+    useEffect(() => {
+        net.org.adminGetTeachers(auth.user?.access_token,[props.orgId],setReqState).then(response => {
+            if(!response){
+                return;
+            }
+            setTeachers(response??[]);
         })
     },[])
 
@@ -61,21 +73,24 @@ function ClassBar(props) {
             </Box>
             <Separator orientation="vertical" size="4"/>
             <Flex m="2" direction="row" flexGrow="1" align="center">
-                <TextField.Root placeholder="Class name" m="1" style={{width:"100%"}} value={currentClassName} onValueChange={setCurrentClassName}></TextField.Root>
+                <TextField.Root
+                    placeholder="Class name"
+                    m="1"
+                    style={{width:"100%"}}
+                    disabled={!currentClassName}
+                    value={currentClassName??""}
+                    onChange={(e)=>{setCurrentClassName(e.target.value)}}
+                ></TextField.Root>
 
                 {/*<Text ml="6">Teacher: </Text>*/}
-                <Select.Root defaultValue="apple">
-                    <Select.Trigger m="1" size="2"/>
+                <Select.Root>
+                    <Select.Trigger m="1" size="2" placeholder="Teacher"/>
                     <Select.Content>
                         <Select.Group>
-                            <Select.Label>Fruits</Select.Label>
-                            <Select.Item value="orange">Orange</Select.Item>
-                            <Select.Item value="apple">M</Select.Item>
-                            <Select.Item value="grape" disabled>
-                                Grape
-                            </Select.Item>
-                            <Select.Item value="carrot">Carrot</Select.Item>
-                            <Select.Item value="potato">Potato</Select.Item>
+                            <Select.Label>Select a Teacher</Select.Label>
+                            {teachers.map((teacher, idx) => (
+                                <Select.Item key={idx} value={teacher.user_id}>{teacher.display_name}</Select.Item>
+                            ))}
                         </Select.Group>
                     </Select.Content>
                 </Select.Root>
