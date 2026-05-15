@@ -67,6 +67,9 @@ const netOrg = {
 
     // /admin_update_class_data/<org_id>/<class_id>/<teacher>/<name>
     adminUpdateClassData:postReq("/org/admin_update_class_data"),
+
+    // /admin_delete_class/<org_id>/<class_id>/<confirmation>
+    adminDeleteClass:deleteReq("/org/admin_delete_class"),
 }
 
 const net = {

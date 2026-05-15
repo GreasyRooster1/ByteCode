@@ -60,6 +60,15 @@ function ClassBar(props) {
         })
     }
 
+    const deleteClass = ()=>{
+        let confirmation = prompt("Are you sure you want to delete this class? This cannot be undone. Type the name of the class below ("+currentClassName+")")
+        if(confirmation) {
+            net.org.adminDeleteClass(auth.user?.access_token,[props.orgId,currentClass,confirmation],setReqState).then(response => {
+                setCurrentClass(null);
+            })
+        }
+    }
+
     return (
         <Flex width="100%" justify="space-between" direction="row" align="center">
             <Box m="1">
@@ -103,7 +112,7 @@ function ClassBar(props) {
                     </Select.Content>
                 </Select.Root>
                 <Button ml="6" color="green" disabled={!hasEditedClass} onClick={saveClassData}>Save</Button>
-                <Button ml="6" color="red">Delete</Button>
+                <Button ml="6" color="red" onClick={deleteClass}>Delete</Button>
             </Flex>
         </Flex>
     );
