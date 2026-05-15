@@ -55,7 +55,7 @@ function ClassBar(props) {
     },[currentClassName])
 
     const saveClassData = ()=>{
-        net.org.adminUpdateClassData(auth.user?.access_token,[props.orgId,currentClass,currentTeacher.user_id,currentClassName],setReqState).then(response => {
+        net.org.adminUpdateClassData(auth.user?.access_token,[props.orgId,currentClass,currentTeacher,currentClassName],setReqState).then(response => {
             setHasEditedClass(false);
         })
     }
