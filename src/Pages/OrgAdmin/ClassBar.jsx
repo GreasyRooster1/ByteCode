@@ -21,7 +21,7 @@ function ClassBar(props) {
 
     const [reqState, setReqState] = useReqState();
 
-    useEffect(() => {
+    const getClasses = ()=>{
         net.org.adminGetClasses(auth.user?.access_token,[props.orgId],setReqState).then(response => {
             if(!response){
                 return;
@@ -33,6 +33,10 @@ function ClassBar(props) {
             }
             setClasses(tmpClasses);
         })
+    }
+
+    useEffect(() => {
+        getClasses();
     },[])
 
     useEffect(() => {
@@ -65,6 +69,7 @@ function ClassBar(props) {
         if(confirmation) {
             net.org.adminDeleteClass(auth.user?.access_token,[props.orgId,currentClass,confirmation],setReqState).then(response => {
                 setCurrentClass(null);
+                getClasses();
             })
         }
     }
