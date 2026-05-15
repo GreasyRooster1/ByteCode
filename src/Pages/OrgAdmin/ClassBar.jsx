@@ -54,6 +54,12 @@ function ClassBar(props) {
         setHasEditedClass(true);
     },[currentClassName])
 
+    const saveClassData = ()=>{
+        net.org.adminUpdateClassData(auth.user?.access_token,[props.orgId,currentClass,currentTeacher.user_id,currentClassName],setReqState).then(response => {
+            setHasEditedClass(false);
+        })
+    }
+
     return (
         <Flex width="100%" justify="space-between" direction="row" align="center">
             <Box m="1">
@@ -96,7 +102,7 @@ function ClassBar(props) {
                         </Select.Group>
                     </Select.Content>
                 </Select.Root>
-                <Button ml="6" color="green" disabled={!hasEditedClass}>Save</Button>
+                <Button ml="6" color="green" disabled={!hasEditedClass} onClick={saveClassData}>Save</Button>
                 <Button ml="6" color="red">Delete</Button>
             </Flex>
         </Flex>
